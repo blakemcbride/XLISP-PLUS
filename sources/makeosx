@@ -1,0 +1,23 @@
+# This is for OSX, although the XCODE project file is also supplied
+# Tom Almy 12/2010
+
+CC=clang
+
+OBJ=xlisp.o xlbfun.o xlcont.o xldbug.o xldmem.o xleval.o \
+xlfio.o xlglob.o xlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o osxstuff.o unixprim.o xlseq.o xlstruct.o xlftab.o xlmath2.o \
+xlmath3.o xlbignum.o
+
+#CFLAGS = -O -DMACOSX  -arch i386
+CFLAGS = -O2 -DMACOSX
+
+xlispcl: $(OBJ)
+#	$(CC) -arch i386 -o xlisp $(OBJ) -lm
+	$(CC) -o xlispcl $(OBJ) -lm
+	strip xlispcl
+
+$(OBJ): xlisp.h 
+
+clean:
+	rm -f *.o Make.log

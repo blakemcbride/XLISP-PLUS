@@ -1,0 +1,982 @@
+Released as XLISP-PLUS 3.05 (no change)                 12/2011
+
+Fixed bugs in BIGNUM support when dldmem is selected. Fixed problem in
+BIGNUM with Clang compiler. Added selection of xldmem.c versus
+dldmem.c to xlisp.h. Increased default maximum size of arrays and
+strings. Added compiled versions of PRIN1-TO-STRING and
+PRINC-TO-STRING and modified the .lsp definitions so they are skipped
+if these are defined.Changed default to xldmem since it offers better
+performance than dldmem now all our systems have virtual memory.
+
+Released as XLISP-PLUS 3.05                             5/2011
+
+Format function has full implementation of ~R (Roman numerals and
+English text output added), a bug was fixed in ~*, comma insertion in
+~:B H D O and R, added ~^ and ~P.
+
+Added new constant, VERSION, which is a cons of the major version
+number 3 and minor version number 5.
+
+Fixed a bug in dldmem.c where memcpy should have been memmove. Only
+causes improper operation in the (rare?) combination of compiling in
+Linux with optimization on and then running in a Parallels virtual
+machine under OS X. 
+
+Revised the Linux version and added an OS X version. These now have
+the fancy command editor found in the Microsoft versions, and even
+have *DOS-INPUT* which disables the command editor.
+
+The Linux and OS X versions can be compiled with the Qt4 libary to
+have graphics. The graphics capabilities are a superset of those in
+the Microsoft OS versions except exclusive OR doesn't work properly.
+These versions are command line but launch a separate graphics window
+when necessary.
+
+Recompiled the 32-bit Windows version for 3.05 but other binaries are
+still at 3.04, and will probably remain that way since in general I
+have no means to recompile them.
+
+The LSP files have been overhauled to be better structured. See
+particularly the init.lsp and makewks.lsp files. Glos.lsp now will
+store the glossary text in the workspace as properties of the objects.
+This can be optionally disabled to reduce memory usage, however these
+days computers have far more RAM than they did in the early 1990s when
+glos.lsp was written. The LSP files are backwards compatible with
+older XLISP versions.
+
+Documentation is now provided as a PDF file with a Microsoft Office
+source.
+
+
+Re-Released as XLISP-PLUS 3.04                            01/09/1999
+Error fixed in fix of member. Also corrected Leo's name in this file
+and changed the date to 1999. (I've got a year 2k-1 problem.)
+
+Released as XLISP-PLUS 3.04                               01/02/1999
+
+expt of a complex number with a fraction exponent, and nreverse of a
+two character string fixed. The member function fixed to only accept
+proper lists (errors pointed out and corrected by Leo Sarasua). 
+
+Still bogged down with other tasks. I've got some upgrades and revised
+documentation to do. But at least all bugs (:-) are fixed.
+
+Released as XLISP-PLUS 3.03                                 5/22/98
+
+I've been awfully busy so I decided to take a day off just to get
+this out! I'll be changing jobs, so remove any references to
+tom.almy@tek.com you may have. I'm reachable as almy@teleport.com, as
+I've been for the past couple of years. Also, I'm no longer on
+Fidonet, so any Fidonet address for me will no longer work.
+
+Since I didn't add any new features but only fixed the existing bugs,
+this version should be bug free! :-)
+
+
+NOT RELEASED                                                3/15/98
+
+I realized a problem that's always been in XLISP -- real numbers that
+are printed in fixed point which have no fractional part print as
+integers!  To demonstrate, execute (print 1.0). It will print "1".
+I've fixed the problem, which also existed with the FORMAT function.
+Changes are in xlprin.c and xlfio.c. If *FLOAT-FORMAT* is used, the
+output format is not checked for any sort of validity.
+
+Fixed errors in xlserv.c (reported by Luke Tierney). Fixed problems
+with READ-PRESERVING-WHITESPACE (reported by many people). Fixed problems
+with math in non-ansi compilers (reported by Luke Tierney and others).
+
+POSIX support in unixstuf.c fixed (but not checked). EOF handling in
+READ improved.  Corrected parsing of values such as #O+1. Some minor
+bugs in the LSP files fixed. Some other changes made to enhance
+portability. (All from Andreas Schwab, schwab@gnu.org.)
+
+When BIGNUMS is defined, rounding didn't work properly. I've also
+improved rounding when BIGNUMS is not defined. (Reported by Melinda
+E. Johnson, mjhnson@medea.gp.usm.edu).
+
+Lots of small changes to eliminated dozens of warning messages. Some
+changes made to support Win32 version compilation under Visual C++
+and the new Borland C++ Builder.
+
+
+RELEASED                                                    1/1/98
+Revision set to 3.02. Put on teleport.com.
+
+NOT RELEASED                                                09/02/97
+
+Support added for BeOS. Use makebeos to compile. (Thanks to Marc
+Ferguson, marc@be.com).
+
+Added READ-PRESERVING-WHITESPACE. Actually, the old READ preserved
+whitespace, so the new function is actually the old function and the
+old function is new. Got that?
+
+
+NOT RELEASED                                                07/25/97
+
+Leo Sarasua reported several bugs that I fixed. When BIGNUMS are
+defined, the predicates MINUSP, ZEROP, PLUSP, EVENP, and ODDP would
+return false for non-numeric arguments rather than give an error
+message (xlmath3.c). Also when PACKAGES and MULVALS were defined,
+(intern "aNewSymbol") would return :internal rather than nil for the
+second return value (xlbfun.c, function makesymbol).
+
+Put on teleport.com, July 5, 1997
+                                                            07/04/97
+Revised version to 3.01 in executables. 
+
+                                                            04/11/97
+
+Many changes thanks to Leo Sarasua. He discovered a problem with
+UNLESS and WHEN with multiple-return-values, which I have fixed. I
+then discovered more multiple-return-value problems with these
+functions as well as COND, OR, and AND. I fixed those as well by a
+rewrite (all in xlcont.c).  He also cleaned up and made additions to
+init.lsp, common.lsp, common2.lsp, and stepper.lsp.  Added functions:
+THE, PROVIDE, REQUIRE, *modules*. Two new utilities: memo.lsp and
+profile.lsp.
+
+He also completely reworked the documentation.
+
+
+                                                            01/27/97
+
+A couple of misuses of xlprotect changed to xlsave. These are in seldom
+used sections of code, so I'll hold back on releasing them until more
+changes accumulate. Changed files include xlsym.c, xlbfun.c, and xlpp.c
+
+In xlmath3.c, an 11/11/96 fix for a bug in the gcc compiler causes
+problems for with EXPT with a negative integer first argument. Fixed again.
+A small change in the algorithm will improve operation of FLONUM to FIXNUM
+power -- before it would always produce a complex result.
+
+In xlbignums.c, function logbinary(), changed xlprotect() calls to xlsave()
+calls. In xlbfun.c, function xevalhook(), changed xlprotect() call to xlsave()
+call, effectively changing back to "old way" code segment.  (From Luke Tierney)
+
+Luke Tierney also suggested allowing constructs of the form (let ((x))...)
+as in the latest Common Lisp revision. I've made the changes, but have not
+updated the documentation which should show initial values are optional in
+LET LET* DO DO* PROG and PROG*.
+
+
+Made available at ftp.teleport.com /vendors/almy 1/26/97
+                                                            01/24/97
+
+Last minute fixes, thanks to Luke Tierney. the ~[ command would not
+correctly skip fields with "v" arguments. Top level printing would not
+print all multiple values if one of the values required a structure
+:print-function function or object :prin1 method to print. Fixes are
+in xlfio.c and xlisp.c.
+
+Luke also pointed out problems with FLATSIZE. I fixed the problems by
+having FLATSIZE print to a USTREAM and then calculate its size. This
+is a far cleaner approach than what originally existed, and solves
+anomalies in printing (:prin1 and :print-function can no longer get
+stream names of NIL meaning "calculating size"). Changes made to
+xlio.c, xlfio.c, xlpp.c, xlglob.h, and xlglob.c.
+
+Timestamps on files unchanged -- they still read 1/15/97, since it was
+not released.
+
+
+New Version number - 3.0                                    01/15/97
+
+I started working on Xlisp back when it was version 2.0. When David
+Betz came out with 2.1, I incorporated his changes and made mine
+version 2.1. I had expected him to come out with additional releases,
+so I keep my XLISP-PLUS version number at 2.1, adding a suffix
+letter. David Betz stated that he was abandoning Xlisp for Xscheme a
+number of years ago, and in fact 2.1, issued in 1989, was the last
+version I saw.
+
+Until now. David has returned back to Xlisp with a version 3.0.
+However this version is based on XScheme and is debatably a successor
+to Xlisp 2.1. This put me in a quandry. If I continued with my
+*original* plan, I'd incorporate the changes David made and make an
+XLISP-PLUS 3.0 based on his Xlisp 3.0. However that's totally
+impractical. On the other hand, if I kept the 2.1x numbering, there
+would be an impression that Xlisp 3.0 was somehow more advanced than
+XLISP-PLUS 2.1i, when in fact XLISP-PLUS has far more features.
+
+So I decided to break with the plan. I've upgraded the number to 3.0,
+even though the code is based on Xlisp 2.1.
+
+
+                                                            12/05/96
+
+Garbage collection error during BACKQUOTE (in rare cases) fixed.
+
+
+                                                            11/11/96
+
+An error was discovered by Robert.Field@adecco.com in the expt
+function for the 80386 DOS version. Seems to be a rounding problem in
+the C library pow() function. I've added a patch that won't effect
+other versions.
+
+
+                                                            10/3/96
+
+I realized that INIT.LSP unexporting certain symbols in the XLISP
+package wasn't necessary because I was handling that within the code.
+I also improved the definition of EXPORT for systems not implementing
+packages.
+
+Well, I actually have the source for the Windows help (see next
+section), so it's been revised. I also fixed winstuff.c and
+win32stu.c so the "Index" selection of the XLISP-PLUS help menu
+actually works.
+
+Since its start, XLISP has always allowed "\n" in strings to be "new
+line", and printed quoted strings with "\n" where a new line occured.
+Well I've concluded that this extension for reading is fine, even
+though it isn't Common Lisp compatible, but for printing it makes
+more sense to print the new line character. The string is still
+readable.  I'm still escaping other control characters.
+
+The file INSPECT.LSP has been revised to include the Common Lisp
+functions INSPECT and DESCRIBE. These are defined in package XLISP,
+not in package TOOLS. INSPECT is basically INS but without quoting
+the argument. It works with any object, not just symbols.
+
+The file DOCUMENT.LSP can be loaded instead of GLOS.LSP INSPECT.LSP
+to get the Common Lisp function DOCUMENTATION. GLOS are still
+available, and will respond to 'function and 'variable definitions
+added via DOCUMENTATION. MAKEWKS.LSP has been revised to load
+DOCUMENT.LSP rather than GLOS.LSP.
+
+For some strange reason, keyword symbols appeared on both the keyword
+internal and external obarray. Actually these were EQ! Seems more
+sensible to me to have an empty internal obarray and put all entries
+in the external obarray, so I did so. Making this change made it
+possible to merge xlextern() into xlenter().
+
+When a literal structure is typed in for which the structure type is
+not defined, the MAKE-xxx symbol was entered as an external symbol
+rather than an internal symbol. It's now fixed (in xlstruct.c).
+
+I've reworked much of the package code in xlsym.c so that errors are
+displayed before any action occurs in EXPORT, UNEXPORT, IMPORT,
+SHADOW, and SHADOWINGIMPORT. All name collisions are reported before
+the continuable error is issued. USEPACKAGE and UNUSEPACKAGE check
+for valid package names before any action occurs. USEPACKAGE may
+issue one continuable error per package -- there wasn't a reasonable
+way to check for collisions of all packages before adding to the use
+list. UNEXPORT now indicates an error when an attempt is made to
+unexport from the keyword package.
+
+MAKE-PACKAGE will no longer make a package if any errors occur.
+Before, many errors would still allow the package to be created. This
+was not good.
+
+Trying to explicitly use package KEYWORD with MAKE-PACKAGE or
+USE-PACKAGE will now give an error message.
+
+Symbols with no home package will now always print as uninterned
+(leading #: characters) following CLtL rather than printing as
+accessible if it is accessible. This changes xlprin.c, function
+putpacksym().
+
+CLASSP was needed in package TOOLS in several places, even when
+classes.lsp was not defined. So a duplicate definition was shadowed
+there. This caused a problem, so I've moved the defininition of
+CLASSP to init.lsp.
+
+Other reasonable things I'm not planning to do:
+
+1. Integrate generational garbage collector
+
+2. Integrate bytecode compiler
+
+(these two would increase performance, which I feel is fine anyway on today's
+ fast computers)
+
+3. Add accessability to Windows API in Windows version
+
+(while undoubtedly it would be fun, there's no way I could compete with the
+ various visual design tools out there so writing such programs to use it would
+ be difficult).
+
+
+Released 9/14/96 on http://www.teleport.com/~almy or         9/8/96
+ftp://ftp.teleport.com/vendors/almy 
+Revision level (H) not changed
+
+Printing fixed for *readtable-case* :invert when package name is printed
+with symbol name and combined name is mixed case. This is an old problem,
+for which I disagree with Common-Lisp's conception of how :invert should
+work. But, hey, who has more power here? The ugly result is, for class "FOO",
+internal symbols "X" and "Bar" will display (and be read) as:
+
+     foo::x  and FOO::Bar
+
+rather than the far more sensible (IMHO):
+
+     foo::x  and foo::Bar
+
+
+Bug returning multiple values in :isnew methods fixed. This typically
+would not have had a noticeable impact. Modifications made to xlobj.c
+and xleval.c to allow tracing of methods. New functions TRACEMETHOD
+and UNTRACEMETHOD are in classes.lsp.
+
+A previously fixed bug involving recursing of TRACE was discovered to
+be only partially implemented. Not it's fully implemented.
+
+Documentation for ~:[ format specifier was in error. Documentation
+for package-obarray was in error (wrong default). Documentation error
+*not* fixed in the windows help file because I don't have the source. :-(
+
+Added CLSDEMO.LSP, a demonstration showing implementation of the Smalltalk
+collection classes in XLISP.
+
+OS/2 executable file is now compressed with LXLITE.
+
+Released on www.teleport.com/~almy		6/4/96
+Revision level (H) not changed
+
+OS/2 Version -- Control-Break was not captured -- Fixed.
+
+Windows versions -- xlisp21h.hlp file is now invokable from with
+XLISP.
+
+RELEASED 3/15/96 on BBBBBS and http://www.teleport.com/~almy
+Revision level (H) not changed.
+
+I'm not surprised -- with the fairly hefty changes to math in level H,
+there have been lots of bugs.
+
+NOT RELEASED                                            3/12/96
+Bug in ASIN function (reported by Luke Tierney) causes FLOAT values to
+be converted to complex regardless of range.
+
+Fix for bignum zero and minus one failed with saved workspaces. Restoring
+of saved bignums caused eventual crashing for versions using dldmem.c
+(all 16 bit versions and 32 bit Windows).
+
+
+RELEASED 2/29/96 on BBBBBS and http://www.teleport.com/~almy
+Revision level (H) not changed.
+
+NOT RELEASED                                            2/21/96
+A garbage collection bug in LOGNOT (reported by Luke Tierney) lead me
+to some bugs in a number of functions caused by cvtfixbugnum being unable
+to convert negative numbers. This is easiest seen by doing (LOGAND). 
+cvtfixbugnum() fixed, and global variables added for "bignum" zero and
+minus one -- this reduces the amount of code and slightly speeds up some
+calculations.
+
+NOT RELEASED						1/17/96
+From Guido Corremans (no email address supplied): "NINFIX" in xlisp.h
+should be MINFIX. DRIBBLE in Windows versions doesn't work (user
+input is not stored in file) -- fixed. DRIBBLE in 32 BIT DOS and OS/2
+versions doesn't work -- data stored in "binary" mode, no CR before
+LF -- fixed.
+
+From Luke Tierney, the new sort function was doing xlprotects before 
+assigning a value. This has been fixed. Also an argument was missing 
+preventing compilation with KEYARGS undefined.
+
+File win32stu.c accidentally left out of distribution.
+
+RELEASED DECEMBER 21, 1996 AS XLISP 2.1H
+
+Sorting is now stable. Algorithm changed from Quick Sort to List
+Merge Sort. (Sorting of arrays is done by coercing to a list,
+sorting, and then coercing back -- actually faster than the old Quick
+Sort!). Added STABLE-SORT, an alias of SORT.
+
+A bug in COMPLEMENT was discovered by Leonardo Sarasua (sarasua@bart.nl).
+It's now fixed. Two bugs in ASSERT, also discovered by Leonardo, have been
+fixed.
+
+NNODES increased to 10000 for all 80x86 32bit versions.
+
+
+NOT RELEASED						10/15/95
+
+Added SUBSTITUTE* and NSUBSTITUTE* functions. These have :FROM-END
+and :COUNT keywords, naturally!
+
+Type CONTEXT changed to CONTXT to allow an attempt to compile a WIN32
+version. I also had to add some typecasting and a few other minor
+changes to get Borland's 32 bit compiler to accept code. It's sure
+touchy!
+
+New section on compiler options added to documentation.
+
+Code to handle longjumps in older Windows compilation conditionally
+removed -- seems that support is in the new C libraries, at least in
+my version 4.02 Borland C.
+
+DIGIT-CHAR and DIGIT-CHAR-P now take the optional radix argument.
+
+
+NOT RELEASED						6/16/95
+
+Added :FROM-END keyword to FIND* POSITION* and COUNT*. Note that
+direction is still from the front for lists and that the keyword does
+nothing for COUNT*, however this is all OK by Common Lisp. Added both
+:FROM-END and :COUNT to DELETE* and REMOVE*. This is controlled by
+the FROMEND compilation option.
+
+(return nil) would fail in object methods when LEXBIND used. (Fix from
+Niels Mayer).
+
+ALLOC takes a third argument, for systems with using dldmem.c. This specifies
+the ideal ratio of free to used vector space. Default is 1, corresponding
+to the old built-in default. This value should be raised if extensive time
+is spent garbage collecting in math intensive operations. The ROOM function
+will show the number of garbage collects triggered by vector allocation.
+
+
+NEW CHANGES, NOT RELEASED:
+
+Major changes for 2.1h:
+
+Added INTEGER and REAL to typep testing. 
+
+Deleted *ratio-format*.
+
+Bignum support added. Deleted compilation option of RATIOS, added
+BIGNUMS, which has ratio support. What follows in this section only
+applies when BIGNUMS compliation option is defined:
+
+Typeof a bignum is BIGNUM.
+
+Delete *integer-format*, add *read-base* and *print-base*.
+
+Added #D and #nR read macros.
+
+Added ~R and ~B format specifiers.
+
+Moved logical functions (except LOGNOT) into xlbignum.c and math
+functions are in xlmath3.c. Added LOGEQV, LOGNAND, LOGANDC1,
+LOGANDC2, LOGNOR, LOGORC1, LOGORC2, LOGTEST, LOGBITP, LOGCOUNT, and
+INTEGER-LENGTH. Byte manipulation functions added to common2.lsp.
+ISQRT in common2.lsp rewritten to take the square root of any integer.
+
+Read-byte and write-byte require binary files. Filename is not
+optional. Character I/O functions require character files or unnamed
+streams. Print of stream shows binary/character type.
+
+Files may be opened using :element-type signed-byte, unsigned-byte,
+(signed-byte n), or (unsigned-byte n). "n" must be a multiple of 8.
+The existing 'fixnum becomes unsigned byte. No overflow checks made
+on output (consistant with older versions), however write-byte of
+negative value to unsigned-byte file is not allowed. FILE-LENGTH and
+FILE-POSITION are based on multiples of the size of the element.
+
+							05/16/95
+Problems with matherr() and ldexp() in Borland C. Symptom -- (float x)
+for large integer x doesn't produce INF but instead produces finite
+value slightly less than maxfloat. Matherr changed its name between
+Borland C versions (boo! hiss!).
+
+Problems with trig functions in GCC (targeted for 80386, this is both
+the DOS-DJGPP and OS/2-EMX compilers) have been worked around --
+optimization must be turned off for modules where trig funtions are
+used. Symptom -- (sin x) = x for *large* values of x (such as 1e20).
+
+An error when PACKAGES included caused keyword arguments with <key>
+specified to produce a syntax error.
+
+READ-FROM-STRING in common2.lsp improved.
+
+							04/26/95
+(SETF (GET NIL ...)..) did not work. SETF with a defined placeform
+(such as with DEFSETF) returns correct value (always did, but now 
+allows return of incorrect values rather than forcing correct ones).
+
+GLOS glossary revised and a few small improvements made.
+
+The Symbol Name Lookup feature of the MS-DOS, Windows, and OS/2
+versions has been improved to support case matching in readtable
+:invert and :preserve modes.  The symbol name will be completed to
+the extent it is unique. If there aren't multiple choices, the
+current display line is altered, saving screen space. A bug in
+command line recall (which often caused crashes) has been fixed.
+
+
+							04/14/95
+I got control-ins and shift-ins backwards in xlispwin. (Pointed out
+by Jim Frame, jhframe@dcn.davis.ca.us)
+
+							03/09/95
+The current(?) library for DJGPP doesn't handle fseek(,,SEEK_CUR) 
+properly, so it had to be fixed (done in xlisp.h). I also allowed
+separate getc/putc for ascii and binary files (like the original
+Xlisp 2.1) the the MS-DOS text file problem can be handed either
+at file open or getc/putc time. In the original, it had to be handled
+at open time, so deleting the separate functions didn't really 
+hurt. Making this change solves problems with DJGPP and EMX, and
+probably would for Metaware if I still supported it.
+
+                                                        03/06/95
+"T" changed to "t" in definition of SIGNUM in COMMON.LSP (I forgot
+who pointed this out).
+
+OS/2 version (compiled with EMX) added. New files: EMXSTUFF.C and
+MAKEEMX. XLISP.H modified.
+
+PEEK-CHAR now has eof related arguments. This was an oversight.
+Documentation revised.
+
+MAKEWKS.LSP added to build the initial XLISP.WKS file. This should
+help people new to packages.
+
+Added #D and #nR read macros. Fixed ~X and ~O directives for negative
+values.
+
+							10/05/94
+(string 0) fixed. Thanks to Gottfried Ira.
+
+RELEASED:
+
+                                                        08/29/94
+The fix to COND of 2/2/94 was incorrect. Now COND *really* works!
+(Bug and fix reported by John Weiss, jweiss@silver.sdsmt.edu)
+
+Executables recompiled with latest Borland compiler, 4.0, and latest
+gcc, which now works with DPMI. Slight mods to DOSSTUFF.C were
+necessary.
+
+This upgrade done without name revision.
+
+
+Released as XLISP-PLUS 2.1g                             05/11/94
+COMMA-AT did not complain about non-lists. APPEND would hang on
+circular lists. COND allowed non list clauses. (Bugs reported by
+Gottfried Ira). CONCATENATE would hang on circular lists.
+
+Removed several free() calls of obviously NULL pointers in the
+unixstuf.c, dosstuff.c, and winstuff.c files.  (Error found by Luke
+Tierney.)
+
+Some crashes with XLISPWIN were traced to optimization errors in
+Borland C++ V3.1. Problem fixed by turning off offending optimization.
+
+                                                        04/26/94
+There was a bug involving GO's within UNWIND-PROTECT's which was fixed
+by changing the mechanism that the GO target was propagated back to
+the TAGBODY. Resulting code is smaller and implementation is much
+cleaner. (Bug reported by Gottfried Ira)
+
+Implementation documentation upgraded to include operation of contexts.
+Typo in CATCH documentation fixed.
+
+Fixed potential name clash in inspect.lsp.
+
+                                                        04/16/94
+Changed "forth" to "fourth" in place form definition in COMMON2.LSP.
+Changed FACT.LSP so factorial function works for (FACT 0). (Fix by
+Mihai Tache, moj@karla.indinf.pub.ro).
+
+							03/14/94
+Bug fixed in MAP-INTO with more than three arguments. (Fix by Luke Tierney).
+
+                                                        02/15/94
+A bug was fixed in stepper.lsp.
+
+                                                        02/06/94
+A buffer was too small for filepathnames in the Unix versions. This
+has been fixed by making STRMAX be MAXPATHLEN for UNIX only. Some
+declarations fixed up for non-ANSI C compilers.
+
+Changes made so XLISP will compile on DEC Alpha.  (From Luke Tierney)
+
+GENSYM will now handle numeric parts greater than 32767 on 16 bit 
+integer systems. (Another old bug just found, from Luke Tierney)
+
+Addresses will now print better on some systems (Luke Tierney)
+
+Status messages (from the ROOM function and from control-T) display
+nicer, and in the latter case, display more information. In the Windows
+version, control-T no longer puts up a status dialog box, and the menu
+status selection now toggles a separate status window which is updated
+once a second.
+                                                        02/02/94
+The "long standing bug" in PROGV, "fixed" 11/19/93, was only half
+fixed.  It's now really fixed. (Courtesy Gottfried Ira)
+
+The implicit BLOCK in DOTIMES and DOLIST now encloses the evaluation
+of the count/list argument. This allows (dotimes (i (return 'a))) to
+work.  (Problem pointed out by Gottfried Ira).
+
+Fixed bug that would cause (cond ((values 1 2))) to return 1, 2, rather
+than NIL. (Fix by Luke Tierney)
+
+The loop index can now be safely used in the return expression of
+DOTIMES. Before, it wasn't protected from garbage collection.
+
+                                                        02/01/94
+PP.LSP use of READ needed to be changed to handle EOF (reported by
+thantos@runic.via.mind.org (Alex Williams)). Overflow during
+addition/subtraction of complex integers was not handled properly
+(fix by Luke Tierney).
+
+                                                        01/29/94 
+The following bugs were fixed with the Windows version: Column set
+wrong on newlines (reported by Alex Williams).  Marked text did not
+unmark when the enter key was hit and cursor was at the bottom of the
+display. Copy command changed so that final newline not placed in
+clipboard -- this makes the command more useful in that the last (or
+only) line of pasted text can be edited.
+
+							01/03/94
+DEFUN and DEFMACRO affect global values, and not local bindings (such
+as with flet or macrolet). Missing unixprim.o in UNIX makefiles fixed.
+CATCH, THROW, and CASE now signal errors if no arguments. These bugs
+found by ira@iue.tuwien.ac.at (Gottfried Ira).
+
+1- of max negative integer now produces correct answer when
+NOOVFIXNUM is used.  COMMON2.LSP changed so that APROPOS returns no
+value when multiple values are compiled but packages are not
+compiled.  Added #ifdef MULVALS at a line in xlimage.c that should
+not compile if MULVALS is not defined. Fixed documentation error in
+<eofp> argument; this also changes glos.txt.  These bugs were found
+by kok@cs.colostate.edu (Jan Kok).
+
+Removed reset of lposition in osflush(). Before the change, flushing
+the keystroke buffer would tell the system the cursor was at the
+left margin, messing up FRESH-LINE, among other functions.
+
+xlgetcolumn() did not correctly calculate the column number of USTREAMs.
+(Fix by Jan Kok).
+
+Corrected Y-OR-N-P to read a single character. Added YES-OR-NO-P
+which reads in a line of text. Both functions now work according to
+Common Lisp definitions.
+
+Error in DO, PROG, and, LET could cause garbage collection problems.
+(Fix by Luke Tierney). [After making this fix, a simulation program I have
+that would run a long time and then crash suddenly started working!]
+
+An error in readme.win documentation file made created XLISPWIN.INI
+files worthless.
+
+(Final release, 12/17/93)				12/17/93
+Time to let go...
+
+(Still working on it, released on BBBBBS 2.1f)		11/19/93
+
+Added far pointer quicksort function to MEDMEM MS-DOS versions,
+allowing sorting of all sequences.
+
+Added graphics to Windows version. Note that graphics and colors are
+not refreshed if window is un-obscured.
+
+The MODE function now returns dimensional information.
+
+Fixed reported bugs in unixprims.c and function EVALHOOK. Allowed change
+of statically allocated small FIXNUM range in xlisp.h. Fixed external
+symbol initiation problem with packages. Cosmetic changes to Windows
+version, and grayed Run-Proceed and Run-ReturnALevel when not at a break
+level.
+
+It never ends! Luke Tierney dropped a bunch of code off, so now READ,
+READ-CHAR, READ-BYTE, and READ-LINE take the eof related arguments, and
+there are new FORMAT directives O X # ? | { } ( ) [ and ].
+
+Obscure bugs in defsetf and macroexpand fixed. Long standing bug in
+xlprogv fixed. Bug involving both optional and keyword arguments fixed.
+
+Added *READ-SUPPRESS* basically for the #+ and #- reader macros. Not
+documented here.
+
+
+(RELEASED ON Bitter Butter Better BBS)			11/11/93
+
+Added INSPECT.LSP, a replacement for REPAIR.LSP. Much cleaner design.
+
+Completed Microsoft Windows version.
+
+
+(NOT RELEASED)						10/06/93
+
+Version changed to 2.1f, for "final" version. :-)
+
+The repair function has been revised and will now handle structures.
+This venerable piece of code I wrote 18 years ago and is really showing
+its age.
+
+I've added a glossary function (glos.lsp and glos.txt) for online
+documentation. This function combined with the tab key in the DOS
+environment provide a pretty handy programming environment.
+
+The C variable "true" has been changed to "s_true" to reflect on the
+standard naming practice.
+
+Added MAP-INTO and COMPLEMENT.
+
+(NOT RELEASED)                                          09/26/93 
+Multiple values and packages features from Luke Tierney added. These
+are compilation options. .LSP files updated to match (I hope!). The
+entire set of functions, as described in CLtL2 have been added, some
+functions in COMMON.LSP.
+
+Added SPECIALP, MARK-AS-SPECIAL, and (in COMMON.LSP) EVAL-WHEN, DECLARE,
+and PROCLAIM. 
+
+Fixed some small bugs with FLATSIZE and objects.
+
+
+(NOT RELEASED)                                          09/20/93
+Added compilation option LEXBIND for lexical binding of GO and
+RETURN (Luke Tierney). Fixed ROUND to round to the nearest even.
+Added comments for DEFVAR DEFCONSTANT DEFPARAMETER and DEFSTRUCT, and
+fixed bug in HASH (from Jan Kok).
+
+(NOT RELEASED)						09/16/93
+Fixed keyword args so duplicate key args ignored. Fixed baktrace
+of SUBRs where keyword args are used. Added :ALLOW-OTHER-KEYS. Added
+Luke Tierney's *startup-functions*, *command-line*, *load-file-arguments*,
+*top-level-loop*, TOP-LEVEL-LOOP, and RESET-SYSTEM.
+
+(NOT RELEASED)						07/16/93
+Added GETF, and GETF placeform for SETF. Added third "default"
+argument for GET. Added PSETF. Corrected bugs in SETQ/PSETQ/SETF that
+allowed an odd number of arguments with no error. Added symbol name
+completion (MS-DOS), defined C constants for all special keyboard
+characters. Added LIST-LENGTH. Added :INITIAL-ELEMENT and
+:INITIAL-CONTENTS to MAKE-ARRAY. Added :CAPITALIZE for *PRINT-CASE*.
+Added functions STRING-CAPITALIZE and NSTRING-CAPITALIZE. Added
+IDENTITY as internal function, and ignore :KEY being #'IDENTITY.
+Improved performance of SORT, and will also sort all sequences
+(except for MEDMEM compilations in MS-DOS). Added NSUBST, NSUBST-IF,
+NSUBST-IF-NOT, NSUBLIS, and fixed errors in SUBLIS and SUBST.
+
+(NOT RELEASED)						06/21/93
+Since I intend version 2.1f to be my last, I decided to to what
+I should have done earlier -- make ERROR CERROR and BREAK compatible
+with Common Lisp. It sure makes usage nicer. Because CERROR
+uses the arguments twice, I added the ~* directive to FORMAT. I
+suppose I should make PRINT do an initial newline instead of a
+trailing one, but this is not a major problem since most programs
+I've seen use FORMAT these days.
+
+Latest version of GCC now handles printing of NANs properly --
+XLISP source changed appropriately.
+
+Added COUNT, COUNT-IF-NOT, POSITION, POSITION-IF-NOT, FIND, and
+FIND-IF-NOT. Because of recoding of COUNT-IF, POSITION-IF, and
+FIND-IF, no more code space is used than before.
+
+Added system stack checking code (based on code supplied by
+Richard Zidlicky). Code has some system dependencies, so is not
+enabled for all configurations. Basic effects of the code (which
+is enabled by defining STSZ to the stack size, typically done on
+the compiler command line):
+1. EDEPTH and ADEPTH set appropriate to size.
+2. Low-water mark is checked in EQUAL, SUBST, SUBLIS, PRIN*, and READ
+   functions, which could cause a system stack overflow before. EVAL
+   is also checked, however overflow here is unlikely if EDEPTH and
+   ADEPTH are small enough.
+3. A special garbage collector stack low-water-mark prevents the
+   garbage collector from running (and does a TOP-LEVEL) when it
+   appears that there would not be enough stack left. A check within
+   the garbage collector code causes a fatal error message if the
+   GC is attempted but the stack runs out anyway. If this low-water-mark
+   is set to zero, then no check is performed. This is recommended for
+   environments where the stack can't really run out but this feature
+   is desired for items 2 and 4 in this list.
+4. A new function SET-STACK-MARK is used to set a stack mark that
+   if remaining free stack space drops below a break level will
+   be entered. This provides excellent means to catch runaway 
+   recursive functions in a state that allows debugging. The argument
+   value is the number of bytes remaining in the stack and is limited
+   at the low end to be greater than the internal low-water mark
+   and at the high end to be somewhat less than the free memory at
+   the time the function is executed. SET-STACK-MARK returns the
+   previous value.
+
+Installed stack checking for Microsoft C, Borland (Turbo) C, 
+Top Speed C, and GCC.
+
+Fixed error in DEFSETF.
+
+							06/17/93
+(NOT RELEASED)
+Bug fixed so LOOP cannot hang system.
+
+							01/21/92
+(NOT RELEASED)
+Unbound indicator is now not interned. When printed (only possible with
+the debugging function GENERIC) shows as #<Unbound>. The former
+constant *unbound* is now not defined. FMAKUNBOUND is now an subr
+rather than an expr.
+
+
+							12/18/92 
+(NOT RELEASED) 
+
+MS-DOS version has improved line editing (insert mode, l/r arrow,
+delete) with recall of 20 previous lines (up and down arrow keys).
+Tab key now ignored. Line length limited to physical line. Invalid
+keys cause "beep" rather than error message and abort of line.
+
+MS-DOS version calculates "run time" as real time less time spend
+waiting for keyboard input or doing SYSTEM function. This is a
+reasonable aproximation which ignores file I/O. Runtime is set to
+zero at startup.
+
+Time to garbage collect is now recorded, and can be displayed with
+the ROOM function.
+
+ZORTSTUF.C and GCCSTUFF.C merged into DOSSTUFF.C. Support for
+Metaware High-C + PharLap dropped because of high cost of product.
+
+
+							11/30/92
+Improved complex number code by Hume Smith installed.
+
+							11-03-92
+80386 version changed (in gccstuff.c) so that control-Z character in
+ascii files are treated as End-Of-File rather than causing an error
+message. Error message "Unexpected EOF" changed to "EOF reached before
+expression end."
+
+							09-9-92
+Version number changed to 2.1e.
+
+MSDOS versions STUFF files altered to allow characters with high
+bit set (international) to be entered. The compilation option ASCII8,
+defined by default, allows these extended characters to be used
+throughtout XLISP-PLUS. The function ALPHA-CHAR-P has been added
+since BOTH-CASE-P can no longer be used to indicate characters that
+are alphabetic. The function ALPHANUMERICP, which has always existed,
+has been added to the documentation where it was strangely missing.
+
+The 80386 executable has been compiled with the most recent version
+of DJ Delorie's GO32 (1.08) and Ralf Brown's SPAWNO (4.1) which seems
+to have corrected a number of virtual memory management problems.
+It should be noted that GO32 creates its swap file in the root 
+directory of drive C:. To move it elsewhere, specify the directory
+in a "SET GO32TMP=" DOS command.
+
+Documentation revised.
+
+STATUS REPORT:
+
+The compiler I've  been working on is too buggy for distribution
+at this time, and I don't have the time at the moment to work on it.
+Let me say that it integrates real easily in the code (the #defines
+for it are already here), and the applications that work have been
+4-6 times faster.
+
+The Windows version is on hold as well. The current version can be
+compiled using Borland C, with slight mods to the keyboard routines.
+Performance however is not good because of the 80286 protected mode
+operation and the continual load of selectors. Some day when I get
+Windows NT, I'll get back to this. Meanwhile I'll stick to DOS and
+the djgcc compiler.
+
+
+							07-09-92
+
+Operation of setf changed to allow a *setf-lambda* expression as an
+alternative to the *setf* expression. This new format is eval'ed
+twice allowing defsetf to work in a fashion compatible with Common
+Lisp. 
+
+Added the #+ and #- reader macros and the *features* global variable.
+Init.lsp defines the only feature ":xlisp".
+
+Added RATIONAL, because I found out the algorithm to do it. Believe
+me, it isn't easy! I also modified ratio arithmetic so that if a
+value cannot be exactly represented as a ratio of fixnums the result
+is expressed as a flonum. This affects + - * / REM MOD 1+ and 1-.
+
+Fixed + - * 1+ 1- so that integer/integer-complex operations that
+overflow become float/float-complex. Fixed LCM to eliminate overflow
+in cases where least common multiple would fit in an integer, and
+give an error when it would not.
+
+							05-28-92 
+In STEPPER.LSP, fixed bug stepping through RETURN, and display in
+most cases of RETURN, RETURN-FROM, GO, and THROW. Also fixed bug so
+that Enter key can be used for "Newline" command. 
+
+Fixed bug in printing of closures, MS-DOS medium memory model.
+
+							04-13-92
+Fixed two reported errors in unixprim.c.
+
+							03-23-92
+No change to version number -- minor upgrade
+
+Bug fix in common.lsp (function copy-alist), queens2.lsp; new
+makefiles for SPARC and RS6000; UNIX support improved--file
+redirection, long file names, and unixprim.c.
+
+"-b" command switch for "batch" operation -- uncaught errors cause
+xlisp to exit to OS.
+
+							03-02-92
+Fixed "fatal" error in function aref.
+
+							02-13-92
+New version number 2.1d, and name changed to XLISP-PLUS to aid in
+differentiation.
+
+Many compilation options have been removed to provide more consistant
+code. There have been bug fixes in the xlobj (problems with 32 bit
+compilers, and special variable binding), gccstuff, and unixstuf 
+(SYS V support) files. A bug causing (type-of 'x) to return CONS has
+been fixed
+
+Documentation is overhauled, and is somewhat simpler because of the fewer
+compilation variations.
+
+New features are rational numbers and readtable-case.
+
+Added Amiga support.
+
+
+							11-15-91
+
+No change to the version number -- this is a maintenance upgrade.
+
+Three additional bugs have been identified and fixed. The first corrects
+a problem in typep that caused the type NUMBER to never match. The
+second implements *dos-input* for the 80386 XLISP, and corrects a minor
+problem with dribble in that version.
+
+
+						       10-22-91
+
+No change to the version number -- this is a maintenance upgrade.
+
+There have been two bug fixes made to this version. The first corrects
+problems with save/restore and binary files when the 80386 XLISP is used
+and the second corrects problems with string streams during garbage
+collections that print messages.
+
+In addition a new version of go32, DJ Delorie's DOS extender, is being used.
+This one is VCPI compatible as well as XMS compatible (still not DPMI).
+It is also possible to use it without an 80387 using his new 80387 emulator.
+
+Put the file emu387 in the directory with your binaries (lets say "c:\bin")
+and then set the environment variable: "set go32=emu c:/bin/emu387" -- note
+the forward slashes. XLISP will now use the 80387 emulator, even if an 80387
+is present.
+
+							8-19-91
+
+This archive contains a copy of the source file dldmem.c with a bug fixed.
+
+The version number has been revised to 2.1c. Please change file xlisp.c to
+match.
+
+Also included are new executable files. Please delete any existing
+80386 XLISP executables because of distribution licensing problems and
+use this executable which has been compiled with  the GNU C compiler and
+uses DJ Delorie's DOS extender, go32. While this version does not run in
+VCPI or DPMI environments, it does offer virtual memory (swaps to disk)
+and will spawn a DOS shell with almost the entire lower memory free (I've
+incorporated Ralf Brown's SPAWNO into go32!).
+
+Tom Almy
+tom_almy@ieee.org

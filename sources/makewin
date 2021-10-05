@@ -1,0 +1,27 @@
+# Makefile for Windows version of XLISP 2.1g. 
+# All options indicated are for 80386 or greater
+# Borland C++ version 4.02
+OFILES=xlisp.obj xlbfun.obj xlcont.obj xldbug.obj dldmem.obj xleval.obj \
+xlfio.obj xlglob.obj dlimage.obj xlinit.obj xlio.obj xljump.obj xllist.obj \
+xlmath.obj xlobj.obj xlpp.obj xlprin.obj xlread.obj xlstr.obj xlsubr.obj \
+xlsym.obj xlsys.obj winstuff.obj xlseq.obj xlstruct.obj xlmath2.obj \
+xlmath3.obj xlbignum.obj
+
+
+COPT=-w -3 -a- -G -O -mm -H -d -p -WE -DANSI8 -DWINDOWS -DSTSZ=20000
+.c.obj:; bcc -c $(COPT) $*.c
+
+xlispwin.exe:	$(OFILES) xlftab.obj xlispwin.lnk
+	bcc @xlispwin.lnk
+	brc xlispwin.res
+	
+xlispwin.lnk: 	makewin
+	>xlispwin.lnk -mm -W -exlispwin.exe -M $(OFILES) xlftab.obj noehwm.lib
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+xlftab.obj:	xlisp.h osdefs.h osptrs.h
+
+$(OFILES):	xlisp.h
+

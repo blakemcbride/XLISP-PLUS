@@ -1,0 +1,33 @@
+#Chose optimizations with care for this compiler
+
+OFILES=xlisp.obj xlbfun.obj xlcont.obj xldbug.obj xldmem.obj xleval.obj \
+xlfio.obj xlglob.obj xlimage.obj xlinit.obj xlio.obj xljump.obj xllist.obj \
+xlmath.obj xlobj.obj xlpp.obj xlprin.obj xlread.obj xlstr.obj xlsubr.obj \
+xlsym.obj xlsys.obj xlseq.obj xlstruct.obj xlmath2.obj dosstuff.obj \
+xlmath3.obj xlbignum.obj
+
+#For MSC V5.1
+#CFLAGS = -AL -FPi87 -G2 -Gs -Oal -DMSC -DSTSZ=16384
+
+# MSC seems to suck up stack for it's own use -- STSZ should be about 1k
+# smaller than the /st figure on the link line
+
+#For MSC V6.0A
+CFLAGS = -AL -FPi87 -G2rs -Oasler -Zp1 -DMSC -DSTSZ=16384
+
+CC = cl
+
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+
+xlisp20.exe:	$(OFILES) xlftab.obj
+	link  $(OFILES) xlftab/packc/f/cp:1/noe , xlispm , xlispm /m /st:17384;
+
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+xlftab.obj:	xlisp.h osdefs.h osptrs.h
+
+$(OFILES):	xlisp.h
+

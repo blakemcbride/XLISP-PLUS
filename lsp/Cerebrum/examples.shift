@@ -1,0 +1,34 @@
+;;;
+;;; Examples for CEREBRUM
+;;; (Shift register problem)
+;;;
+
+
+(setq worst-possible-score 16)           ; You could get an error of 16 by
+                                        ; getting all sixteen examples wrong
+
+(setq best-cheap-guess 12)               ; You could get 12 right by just
+                                        ; always answering 0
+
+(setq *maximum-raw-fitness*
+      (- worst-possible-score best-cheap-guess))
+
+(setq *detectors* '(a b c d))
+
+(setq *examples*                        ; Each sub-list is
+ '((0  -1 -1 -1 -1)                           ; (correct-answer a b c d)
+   (1  -1 -1 -1 1)
+   (0  -1 -1 1 -1)
+   (1  -1 -1 1 1)
+   (0  -1 1 -1 -1)
+   (0  -1 1 -1 1)
+   (0  -1 1 1 -1)
+   (1  -1 1 1 1)
+   (0  1 -1 -1 -1)                           
+   (0  1 -1 -1 1)
+   (0  1 -1 1 -1)
+   (0  1 -1 1 1)
+   (0  1 1 -1 -1)
+   (0  1 1 -1 1)
+   (0  1 1 1 -1)
+   (1  1 1 1 1)))

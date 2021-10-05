@@ -1,0 +1,7 @@
+*.o
+sources/xlisp
+*.obj
+sources/xlisp.exe
+*.bak
+*~
+

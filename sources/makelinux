@@ -1,0 +1,21 @@
+# This is for OSX, although the XCODE project file is also supplied
+# Tom Almy 12/2010
+
+CC=gcc
+
+OBJ=xlisp.o xlbfun.o xlcont.o xldbug.o dldmem.o xleval.o \
+xlfio.o xlglob.o dlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o linuxstuff.o unixprim.o xlseq.o xlstruct.o xlftab.o xlmath2.o \
+xlmath3.o xlbignum.o
+
+CFLAGS = -O3 -Wall -DLINUX -DSTSZ=8192000
+
+xlisp: $(OBJ)
+	$(CC) -o xlisp $(OBJ) -lm
+	strip xlisp
+
+$(OBJ): xlisp.h 
+
+clean:
+	rm -f *.o Make.log

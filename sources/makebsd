@@ -1,0 +1,23 @@
+# compiles BSD version
+# Hume Smith  Acadia University Feb 1992
+
+# this is for SunOS
+# CC=/usr/ucb/cc
+CC=cc
+
+OBJ=xlisp.o xlbfun.o xlcont.o xldbug.o xldmem.o xleval.o \
+xlfio.o xlglob.o xlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o unixstuf.o unixprim.o xlseq.o xlstruct.o xlftab.o xlmath2.o \
+xlmath3.o xlbignum.o
+
+CFLAGS = -O -DBSD -DUNIX
+
+xlisp: $(OBJ)
+	$(CC) -o xlisp $(OBJ) -lm
+	strip xlisp
+
+$(OBJ): xlisp.h 
+
+clean:
+	rm -f *.o Make.log

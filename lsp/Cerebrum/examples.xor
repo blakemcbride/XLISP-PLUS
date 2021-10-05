@@ -1,0 +1,22 @@
+;;;
+;;; Examples for CEREBRUM
+;;; (The XOR problem)
+;;;
+
+
+(setq worst-possible-score 4)           ; You could get an error of 4 by
+                                        ; getting all four examples wrong
+
+(setq best-cheap-guess 2)               ; You could get 2 right by just
+                                        ; always answering 1
+
+(setq *maximum-raw-fitness*
+      (- worst-possible-score best-cheap-guess))
+
+(setq *detectors* '(a b))
+
+(setq *examples*                        ; Each sub-list is
+ '((0  -1 -1)                             ; (correct-answer a b)
+   (1  -1 1)
+   (1  1 -1)
+   (0  1 1)))

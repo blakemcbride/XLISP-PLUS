@@ -1,0 +1,30 @@
+TL=c:\langs\bcc\lib
+OFILES=xlisp.obj xlbfun.obj xlcont.obj xldbug.obj dldmem.obj xleval.obj \
+xlfio.obj xlglob.obj dlimage.obj xlinit.obj xlio.obj xljump.obj xllist.obj \
+xlmath.obj xlobj.obj xlpp.obj xlprin.obj xlread.obj xlstr.obj xlsubr.obj \
+xlsym.obj xlsys.obj dosstuff.obj xlseq.obj xlstruct.obj xlmath2.obj \
+xlmath3.obj xlbignum.obj
+
+# All options indicated are for 80386 or greater with floating point hardware
+
+# use this for Borland version 3.1:
+
+COPT=-w -3 -a- -G -O2 -f287 -mm -H -d -p -DOVERLAY -DMEDMEM -DSTSZ=16384
+.c.obj:; bcc -c $(COPT) $*.c
+
+xlisp20.exe:	$(OFILES) xlftab.obj xlisp203.lnk
+	tlink @xlisp203.lnk
+	lzexe xlisp20
+	erase xlisp20.old
+
+xlisp203.lnk: 	makebor3
+	>xlisp203.lnk /m c0m $(OFILES) xlftab.obj,\
+	xlisp20, xlisp20, spawnm.lib fp87 mathm cm
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+xlftab.obj:	xlisp.h osdefs.h osptrs.h
+
+$(OFILES):	xlisp.h
+

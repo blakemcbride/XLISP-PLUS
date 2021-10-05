@@ -1,0 +1,28 @@
+# Turbo C, Turbo C++. Note: dont use -p option (Pascal). It doesn't work here
+TL=c:\langs\tcc\lib
+OFILES=xlisp.obj xlbfun.obj xlcont.obj xldbug.obj xldmem.obj xleval.obj \
+xlfio.obj xlglob.obj xlimage.obj xlinit.obj xlio.obj xljump.obj xllist.obj \
+xlmath.obj xlobj.obj xlpp.obj xlprin.obj xlread.obj xlstr.obj xlsubr.obj \
+xlsym.obj xlsys.obj dosstuff.obj xlseq.obj xlstruct.obj xlmath2.obj \
+xlmath3.obj xlbignum.obj
+
+# these options are for 80286 or greater with floating point support
+
+.c.obj:; tcc -c -1 -a- -G -k- -O -f87 -ml -Z -DSTSZ=16384 $*.c # runtime version
+#.c.obj:; tcc -c -1 -a- -k -f87 -ml -v $*.c  # debugging version
+
+xlisp20.exe:	$(OFILES) xlftab.obj xlisp20.lnk
+	tlink  @xlisp20.lnk
+
+xlisp20.lnk: 	maketurb
+	>xlisp20.lnk /m $(TL)\c0l $(OFILES) xlftab.obj,\
+	xlisp20, xlisp20, $(TL)\fp87 $(TL)\mathl $(TL)\cl
+
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+xlftab.obj:	xlisp.h osdefs.h osptrs.h
+
+$(OFILES):	xlisp.h
+

@@ -1,0 +1,26 @@
+;;;
+;;; Examples for CEREBRUM
+;;; (The 3-bit parity problem)
+;;;
+
+
+(setq worst-possible-score 8)           ; You could get an error of 8 by
+                                        ; getting all eight examples wrong
+
+(setq best-cheap-guess 4)               ; You could get 4 right by just
+                                        ; always answering 1
+
+(setq *maximum-raw-fitness*
+      (- worst-possible-score best-cheap-guess))
+
+(setq *detectors* '(a b c))
+
+(setq *examples*                        ; Each sub-list is
+ '((0  0 0 0)                           ; (correct-answer a b c)
+   (1  0 0 1)
+   (1  0 1 0)
+   (0  0 1 1)
+   (1  1 0 0)
+   (0  1 0 1)
+   (0  1 1 0)
+   (1  1 1 1)))

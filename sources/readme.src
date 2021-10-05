@@ -1,0 +1,173 @@
+Only the Linux and OS X build files are current. I've rebuilt the Window32
+version using Borland C++ Builder, but that is, of course, a discontinued
+product. Since I currently have no interest in Windows, I haven't tried 
+Microsoft Visual Studio or Cygwin to attempt a modern build.
+
+IMPORTANT NOTICE: Define BIGENDIAN if your system is "bigendian"
+(Sparc, Motorola...) rather than little-endian (Intel, VAX...).
+
+This directory contains all the source files.  The makefiles are
+standard UNIX format and may not work with some "make" programs. 
+
+See XLISP.H for compilation options.  In particular, all extensions that
+I have added can be turned off.
+
+Tom Almy
+tom@almy.us
+
+These source files are used for all versions:
+DLDMEM.C  (ALTERNATIVE TO XLDMEM.C -- RECOMMENDED)
+DLIMAGE.C (ALTERNATIVE TO XLIMAGE.C -- RECOMMENDED)
+PUTPATCH.C
+XLBFUN.C
+XLBIGNUM.C
+XLCONT.C
+XLDBUG.C
+XLDMEM.C (ALTERNATIVE TO DLDMEM.C -- SUGGEST NOT USING THIS)
+XLEVAL.C
+XLFIO.C
+XLFTAB.C
+XLGLOB.C
+XLIMAGE.C (ALTERNATIVE TO DLIMAGE.C -- SUGGEST NOT USING THIS)
+XLINIT.C
+XLIO.C
+XLISP.C
+XLJUMP.C
+XLLIST.C
+XLMATH.C
+XLMATH2.C
+XLMATH3.C
+XLOBJ.C
+XLPP.C
+XLPRIN.C
+XLREAD.C
+XLSEQ.C
+XLSERV.C
+XLSTR.C
+XLSTRUCT.C
+XLSUBR.C
+XLSYM.C
+XLSYS.C
+OSDEFS.H
+OSPTRS.H
+XLDMEM.H
+XLFTAB.H
+XLGLOB.H
+XLISP.H
+
+The following are system or compiler dependent:
+
+LINUX (tested under Ubuntu 10.04)
+linuxstuff.c    system dependent module
+unixprim.c      system dependent module
+makelinux       makefile for Linux
+
+Mac OS X (tested under Snow Leopard)
+osxstuff.c      system dependent module
+unixprim.c      system dependent module
+makeosx         makefile for OS X
+
+Additionally for LINUX or Mac OS X when using Qt4 (to give graphics capability):
+linux.pro or osx.pro    Qt4 profile file -- used to generate Makefile
+application.h   Files to connect to Qt4 libraries
+Grapher.h
+CThread.h
+application.cpp
+CThread.cpp
+Grapher.cpp
+
+Borland C++ Builder, for Microsoft Windows 95 and NT and later
+WIN32STU.C      compiler depedent module
+XLISPWIN.H      C include file
+XLISPWIN.ICO    icon file
+XLWIN32.DEF     module definition file
+XLWIN32.RES     resource file
+XLWIN32.BPR     project file
+XLWIN32.CPP     needed for C++ Builder project manager
+Adapt the project file as necessary.
+
+*********The remaining choices have been untested since 1999.
+
+Microsoft C (for DOS):
+DOSSTUFF.C	system dependent module
+MAKEMSC		makefile (version 5 compiler)
+
+Microsoft Visual C++ V4.0 or later for Win32:
+WIN32STU.C      compiler depedent module
+XLISPWIN.H      C include file
+XLISPWIN.ICO    icon file
+XLWIN32.DEF     module definition file
+XLWIN32.RES     resource file (don't use XLWIN32.RC)
+
+  You will have to create your own project based on these files:
+   dldmem.c dlimage.c osdefs.h osptrs.h win32stu.c xlbfun.c xlbignum.c
+   xlcont.c xldbug.c xldmem.h xleval.c xlfio.c xlftab.c xlftab.h
+   xlglob.c xlglob.h xlinit.c xlio.c xlisp.c xlisp.h xlispwin.h xljump.c
+   xllist.c xlmath.c xlmath2.c xlmath3.c xlobj.c xlpp.c xlprin.c
+   xlread.c xlseq.c xlstr.c xlstruct.c xlsubr.c xlsym.c xlsys.c
+   xlwin32.res
+  Add these defined symbols: MSC ANSI8 STSZ=1000000
+
+Borland/Turbo C:
+(Note, for Borland C++ 4.x or later, add the library noehm.lib for
+minimum executable size.)
+DOSSTUFF.C	system dependent module
+MAKETURB	makefile (Turbo C)
+MAKESML		makefile for distribution (medium model)
+MAKEBOR3        makefile for Borland C++ V3.1 and 80386
+
+Borland C V4.0 or later, for Microsoft Windows 3.1:
+WINSTUFF.C	system dependent module
+MAKEWIN		makefile (assumes 80386 target)
+XLISPWIN.H	C include file
+XLISPWIN.ICO	icon file
+XLISPWIN.RC	resource file
+XLISPWIN.DEF	module definition file
+
+Borland C V4.0 or later, for Microsoft Windows 95 and NT
+WIN32STU.C      compiler depedent module
+XLISPWIN.H      C include file
+XLISPWIN.ICO    icon file
+XLWIN32.DEF     module definition file
+XLWIN32.RC      resource file
+XLWIN32.IDE     project file
+Adapt the project file as necessary. It has been adjusted
+for operation under true 32 bit windows only, for best 
+performance. 
+
+GNU C Compiler for MSDOS (DJ Delorie port)
+DOSSTUFF.C	system dependent module
+GCCASM.S	assembler routines
+MAKEGCC		makefile (used for distribution)
+
+GNU C Compiler for OS/2 (EMX)
+EMXSTUFF.C      system dependent module
+MAKEEMX         makefile
+
+UNIX:
+UNIXSTUF.C	system dependent module
+UNIXPRIM.C	another system dependent module
+MAKEBSD		makefile for BSD systems
+MAKESYSV	makefile for SYS V systems
+MAKESPAR	makefile for SPARC
+MAKERS6K    makefile for RS6000
+MAKEBEOS	BE OS
+
+AMIGA
+AMIGASTU.C	system dependent module
+
+IBM 370 MVS (for SAS Institute 370 cross compiler)
+SASCSTUF.C	system dependent module
+MAKESASC	makefile
+
+"Experimental" Dynamic Array Allocation (stolen from xscheme):
+You can substitute these in any compilation. The medium model DOS
+compilations require them.
+DLDMEM.C	replacement for XLDMEM.C
+DLIMAGE.C	replacement for XLIMAGE.C
+
+
+Patching facility by Jeff Prothero
+PUTPATCH.C	
+
+

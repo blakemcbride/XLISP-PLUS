@@ -1,0 +1,23 @@
+# compiles SAS/C MVS version
+#  using SAS Institute 370 cross compiler.
+# Dave Rivers - rivers@ponds.uucp
+
+CC=sascc370
+
+OBJ=xlisp.o xlbfun.o xlcont.o xldbug.o xldmem.o xleval.o \
+xlfio.o xlglob.o xlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o sascstuf.o xlseq.o xlstruct.o xlftab.o xlmath2.o
+
+#
+#  Generate optimized, re-entrant, extended name modules.
+#
+CFLAGS = -O -W1,-r -W1,-n!
+
+xlisp: $(OBJ)
+	$(CC) -o xlisp $(OBJ)
+
+$(OBJ): xlisp.h 
+
+clean:
+	rm -f *.o Make.log

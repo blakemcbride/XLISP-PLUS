@@ -1,0 +1,43 @@
+TL=c:\langs\bcc\lib
+OFILES=xlisp.obj xlbfun.obj xlcont.obj xldbug.obj dldmem.obj xleval.obj \
+xlfio.obj xlglob.obj dlimage.obj xlinit.obj xlio.obj xljump.obj xllist.obj \
+xlmath.obj xlobj.obj xlpp.obj xlprin.obj xlread.obj xlstr.obj xlsubr.obj \
+xlsym.obj xlsys.obj dosstuff.obj xlseq.obj xlstruct.obj xlmath2.obj \
+xlmath3.obj xlbignum.obj
+
+# these options are for any processor
+
+# use this for Borland version 2.0:
+
+# COPT=-w -1- -a- -G -k- -f -O -mm -Z -H -d -p -DOVERLAY -DMEDMEM -DSTSZ=16384
+
+# use this for Borland version 3.0:
+
+COPT=-w -1- -a- -G -O1 -f -mm -H -d -p -DOVERLAY -DMEDMEM -DSTSZ=16384
+
+# Define this for Borland version 4.02:
+NOEHM=noehm
+
+.c.obj:; bcc -c $(COPT) $*.c
+
+
+xlispsml.exe:	$(OFILES) xlftab.obj xlispsml.lnk
+	tlink  @xlispsml.lnk
+	lzexe xlispsml
+	erase xlispsml.old
+
+xlispsml.lnk: 	makesml
+#	Use this first selection when TLINK.CFG doesn't exist
+#	>xlispsml.lnk /m $(TL)\c0m $(OFILES) xlftab.obj,\
+#	xlispsml, xlispsml, spawnm.lib $(TL)\emu $(TL)\mathm $(TL)\cm
+#	Use this selection when TLINK.CFG exists
+	>xlispsml.lnk /m c0m $(OFILES) xlftab.obj,\
+	xlispsml, xlispsml, spawnm.lib $(NOEHM) emu mathm cm 
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+xlftab.obj:	xlisp.h osdefs.h osptrs.h
+
+$(OFILES):	xlisp.h
+

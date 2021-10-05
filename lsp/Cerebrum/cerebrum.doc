@@ -1,0 +1,427 @@
+
+
+
+
+
+
+
+
+
+                            CEREBRUM
+   A Framework for the Genetic Programming of Neural Networks
+
+                               by
+                           Peter Dudey
+
+
+                          8 April 1993
+
+
+
+
+
+
+
+
+
+
+                            CONTENTS
+
+I.  How it works
+II.  Care and feeding of CEREBRUM
+III.  Future work
+IV.  A sample run
+V.  Bibliography
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          HOW IT WORKS
+
+     CEREBRUM is an implementation of the Genetic Programming
+scheme developed by John Koza.  Through a process very similar to
+genetic evolution, it breeds neural networks capable of solving a
+variety of problems.
+     CEREBRUM's evolutionary process is parallel to that found in
+nature:  there is a diverse population, some kind of test for
+fitness, and reproduction roughly in proportion to fitness.
+     The initial diverse population of neural networks is generated
+at random.  The networks are represented as Lisp S-expressions,
+very similar to the ones Koza describes (513-526).  In the name of
+clarity, I have used the words "axon" and "dendrite" where Koza
+uses P and W, respectively.
+     Each dendrite has two inputs (i.e., arguments).  The first is
+a weight, either a random number in the range [-2..2] or some
+arithmetic combination of such numbers.  The second input is either
+a detector (one of the inputs to the neural net) or an axon.  The
+dendrite multiplies these values and returns the result.
+     Each axon has, as inputs, from one to five dendrites.  Their
+inputs are added together, and if the result is 1 or more, the axon
+returns 1;  otherwise, the axon returns 0.  The root of each tree
+in the initial population is an axon.
+     The fitness function for individuals in the population
+involves testing them on a set of examples.  The detectors are set
+according to each example, and the individual is evaluated.  The
+result it returns is compared to the correct answer given with the
+example, and the square of this difference is subtracted from the
+fitness of that function.  (Contrary to Koza, I give higher numbers
+to more-fit creatures.)
+     Before the testing of each individual, it is assumed to have
+the "maximum raw fitness".  Originally, I set this to be the worst
+possible error, so that after subtraction, the worst possible
+individual would have a fitness of exactly zero.  However, it
+became apparent that, in a logical problem such as XOR, an
+individual could get the correct answer to half of the problems by
+mere guessing.  This led to undesirably small difference between
+the fitnesses of individuals which had some useful innformation and
+ones which were working on dumb luck.  Consequently, "maximum raw
+fitness" is now the worst possible error minus the best cheap guess
+result, so that "clueless" individuals receive a fitness of zero.
+     After adjusting for fitness against the example set,
+individuals are further penalized for the number of branches in
+them.  This has the effect of breeding for parsimony;  given two
+functions that perform equally well, the researcher would prefer
+the smaller, simpler one.
+     Breeding is next.  Individuals for breeding are chosen
+stochastically, on the basis of fitness:  an individual with a
+fitness of 2 is twice as likely to be chosen as one with a fitness
+of 1, and one with a fitness of 0 will never be chosen.  (No
+individual can have a fitness of less than zero.)
+     Two individuals are chosen for breeding.  Some sub-tree of the
+first individual (possibly the whole thing) is grafted on in place
+of some similar sub-tree of the second individual to produce one
+offspring.  (This is contrary to the usual practice in genetic
+programming, of two parents producing two offspring.  I have no
+particular reason for doing this--it just seemed easier.)
+     A number of members of the next generation are produced by
+this breeding method, and a number are produced by making complete
+copies of stochastically chosen individuals.  In my experience, it
+has seemed best to have about 1/3 of the individuals produced by
+breeding, and the rest by "cloning."  This gives room for a variety
+of new children while insuring that a variety of decent ancestors
+survive.
+     This cycle is reiterated, and there is evolution.  By
+artificial selection (on the part of the fitness function), more
+fit individuals--if necessary, more complex ones--are "designed." 
+Given only the building blocks (axons, dendrites, numbers,
+detectors) and some examples, CEREBRUM can produce neural networks
+that solve an amazing variety of problems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  CARE AND FEEDING OF CEREBRUM
+
+     You will need:
+     An IBM-compatible computer with at least a meg of hard drive
+          (you should have a directory c:\brains)
+     XLISP version 2.1d, including turtle.lsp and pp.lsp  (or the
+          patience to port CEREBRUM to some other Lisp)
+     The files cerebrum.lsp, my utils.lsp, and examples.xor,
+          examples.prt, or some other examples file
+     "A sense of Destiny" (Cowley, 116)
+
+     When you have all of the files in the directory where you keep
+XLISP, run it and then load in cerebrum.lsp.  Type (evolve), and
+sit back and watch the fun.  On second thought, you might want to
+go obtain the beverage of your choice, because this may take a
+while.  If you are doing a particularly long run (more than 200
+individuals per generation), you may want to drive to Arizona.
+     Eventually, generation 0 will show up on the screen.  You will
+get the number of the best individual.  If this is, say, 23, then
+the best critter can be found in the file c:\brains\c23.old.  You
+will also get the fitness of that individual, and the average
+fitness of the population.  If the latter number is higher,
+something has gone very wrong.
+     If your machine can support graphics, and you have that option
+turned on, you will get three graphs.  The green one in the upper
+left shows the fitness of each member of the population.  On
+generations after the first, you may notice that the best and worst
+individuals are on the left.  This is because breeding happens
+before copying, so the bred individuals are listed first.  Bred
+individuals may be completely worthless, while clones are never
+made of zero-fitness individuals.  Conversely, bred individuals are
+the only ones that can have new, useful genotypic combinations.
+     The red graph in the upper right shows how many individuals
+have each fitness.  The further to the right the spikes are, the
+better.
+     The bottom graph, which will not appear in generation 0, shows
+the change in best and average fitness over time.  These generally
+increase from left to right, but may decrease slightly from time to
+time.  In problems where there are only a few examples (such as the
+included ones), the "best" line may be flat for long periods of
+time.
+     The textual information can also be saved to a file.
+
+     Now, I know you're thinking, "Can a twiddle things?"  Hell,
+yes!  Here's how:
+     If you want to work on a different problem, go in and edit one
+of the examples files.  If you are sticking with the 1-or-0 axons
+that CEREBRUM provides, worst-possible-error should be the number
+of examples, and best-cheap-guess should be the largest number of
+examples having the same correct answer.  Set up your detectors and
+examples, and change the name of the file to be loaded in
+cerebrum.lsp.
+     Increasing *maximum-depth* allows for larger neural nets. 
+Very large values (above about 15) may crash the program, due to
+lack of memory.  (Nature, being massively parallel, doesn't have
+this problem.)
+     If you want to continue breeding a population that showed
+promise when a run ended, or experiment with changing the
+environment, you can set *start-from-scratch* to nil to have
+CEREBRUM use a population already on the disk.
+     *population-size* is fairly self-explanatory.  Twiddling of
+*number-to-cross-breed* is a ripe area for experimentation. 
+*number-of-generations* just determines how long the program will
+run.  Only the largest projects are likely to need more than 25.
+     Be careful not to set *parsimony-weight* so high, or *raw-
+fitness-weight* so low, that an individual which completely solves
+the problem looks like it doesn't, by virtue of a low adjusted
+fitness.  If you don't care about parsimony, set that weight to
+zero.
+     Set *graph-statistics* to t if you want the graphs, and your
+machine can support them.  The graphing function is in utils.lsp,
+and may need to be adjusted to fit your system.  The rest of the
+parameters should be self-explanatory.  Note that, since the
+population is stored on disk (to allow for it to be really huge),
+you may want to set up a RAM disk if you have the memory.
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           FUTURE WORK
+
+     I intend to do a lot more work with CEREBRUM, and I hope
+others will as well.  Some ideas:
+     Design more complex axons.  This would involve putting the new
+axon function in a file, loaded in at the end of cerebrum.lsp. 
+Other interesting axons might be ones that return -1 if the
+dendrites add up to -1 or less, 1 for 1 or more, otherwise 0; 
+axons with many levels of activation;  and squashing-function
+axons.
+     More problems.  Two simple logic problems (XOR and odd-3-
+parity) are included here, but they barely scratch the surface. 
+Particularly interesting would be those problems to which neural
+nets are particularly suited, such as pattern recognition.  I hope
+to apply CEREBRUM to several small problems in the oriental game of
+Go.
+     Currently, CEREBRUM's individual neural nets don't learn.  If
+learning were implemented, a fitness function might be based on how
+quickly the test data were learned, with some maximum "hopeless
+case" number of tries.  If anyone wants to do this, it might be a
+good idea to run the nets through the supplied "edit" function,
+which performs all arithmetic within weights, before the lengthy
+fitness test.
+     Finally, this program is not terribly efficient.  Since the
+neural networks don't depend on any unique Lisp features, there is
+no reason it couldn't be done in some more efficient language, like
+C.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          A SAMPLE RUN
+
+CEREBRUM
+
+by Peter Dudey
+
+Maximum Initial Depth: 5
+Population Size: 100
+Number Produced by Breeding: 35
+Number of Generations: 10
+Raw Fitness Weight: 20
+Parsimony Weight: 0.2
+Maximum Conceivable Fitness: 40
+Critters Stored In: c:/brains/
+
+
+Generation Number 0:
+Best Individual: Number 5
+Best Fitness: 18 (of 40)
+Average Fitness: 1.25
+
+
+Generation Number 1:
+Best Individual: Number 30
+Best Fitness: 35 (of 40)
+Average Fitness: 13.9
+
+
+Generation Number 2:
+Best Individual: Number 81
+Best Fitness: 35 (of 40)
+Average Fitness: 15.02
+
+
+Generation Number 3:
+Best Individual: Number 43
+Best Fitness: 35 (of 40)
+Average Fitness: 15.83
+
+
+Generation Number 4:
+Best Individual: Number 0
+Best Fitness: 31 (of 40)
+Average Fitness: 16.2
+
+
+Generation Number 5:
+Best Individual: Number 4
+Best Fitness: 31 (of 40)
+Average Fitness: 18.98
+
+
+Generation Number 6:
+Best Individual: Number 5
+Best Fitness: 31 (of 40)
+Average Fitness: 20.92
+
+
+Generation Number 7:
+Best Individual: Number 5
+Best Fitness: 32 (of 40)
+Average Fitness: 22.17
+
+
+Generation Number 8:
+Best Individual: Number 44
+Best Fitness: 32 (of 40)
+Average Fitness: 25.49
+
+
+Generation Number 9:
+Best Individual: Number 0
+Best Fitness: 32 (of 40)
+Average Fitness: 25.52
+
+
+Generation Number 10:
+Best Individual: Number 56
+Best Fitness: 32 (of 40)
+Average Fitness: 26.57
+
+Here's the best individual: 
+
+(AXON (DENDRITE 1.3858
+          (AXON (DENDRITE -0.165 A)
+                (DENDRITE 1.8446
+                    (AXON (DENDRITE -0.165 A)
+                          (DENDRITE 0.8008 B)
+                          (DENDRITE -1.756 A)
+                          (DENDRITE -0.683 A)
+                          (DENDRITE 0.3681 B)))
+                (DENDRITE -0.5886 B)
+                (DENDRITE 1.3217 A)))
+      (DENDRITE 0.00088715 A))
+
+
+
+
+
+
+
+
+
+
+
+                          BIBLIOGRAPHY
+
+Cowley, Stuart.  1981.  Do-It-Yourself Brain Surgery & Other Home
+Skills.  A & W Visual Library.
+
+Koza, John.  1992.  Genetic Programming:  On the Programming of
+Computers By Means of Natural Selection.  The MIT press.

@@ -1,0 +1,5112 @@
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ   LFT (TM) LISP FUNCTION TREE GENERATOR 1.30  Copyright (C) J.M. 1988-1994   บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ        LFT is part of LXT - the LISP EXPLORATION TOOLS                       บ
+บ        You are expressly prohibited from selling this software or parts of   บ
+บ        it in any form, distributing it with another product or removing      บ
+บ        this notice. This software is Copyright (C) J.M..                     บ
+บ        File creation date: Wed Feb 01 13:20:58 1995                          บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ  EXAMPLE: test()  (9999) <DMEC> <TEST.EL, 10>                                บ
+บ  - test()       : function name                                              บ
+บ  - (9999)       : function cross reference number                            บ
+บ  - <DMEC>       : function found as D=definition, M=macro, E=external definedบ
+บ                   C=function call                                            บ
+บ  - <TEST.EL, 10>: file name, line number                                     บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                     FUNCTION CALLTREE HIERARCHY LISTING                      บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+[related options: -defmacro -XLAMBDA -x -r -m -a -f -i -noundef -u -l -S -D -E -d -F]
+
+%()
+
+axon()
+
+branch-type()
+ ภ %()
+
+compute-statistics()
+ ร fitness-list()
+ ณ  ร fitness()
+ ณ  ณ  ภ count-branchings()
+ ณ  ณ     ร branch-type()
+ ณ  ณ     ณ  ภ %()
+ ณ  ณ     ณ
+ ณ  ณ     ร branch-type()
+ ณ  ณ     ณ  ภ %()
+ ณ  ณ     ณ
+ ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ภ critter-filename()
+ ณ
+ ร greatest()
+ ภ %()
+
+create-axon()
+ ภ create-dendrite()
+    ร create-weight()
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ร create-weight()  ...recursive call
+    ณ  ภ create-weight()  ...recursive call
+    ณ
+    ภ create-axon()  ...recursive call
+
+create-initial-population()
+ ร critter-filename()
+ ภ create-axon()
+    ภ create-dendrite()
+       ร create-weight()
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ร create-weight()  ...recursive call
+       ณ  ภ create-weight()  ...recursive call
+       ณ
+       ภ create-axon()  ...recursive call
+
+cross()
+ ร nth-branch()
+ ณ  ร count-branchings()
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ร nth-branch()  ...recursive call
+ ณ  ภ count-branchings()
+ ณ     ร branch-type()
+ ณ     ณ  ภ %()
+ ณ     ณ
+ ณ     ร branch-type()
+ ณ     ณ  ภ %()
+ ณ     ณ
+ ณ     ภ count-branchings()  ...recursive call
+ ณ
+ ร count-branchings()
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ภ count-branchings()  ...recursive call
+ ณ
+ ร nth-branch()
+ ณ  ร count-branchings()
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ร nth-branch()  ...recursive call
+ ณ  ภ count-branchings()
+ ณ     ร branch-type()
+ ณ     ณ  ภ %()
+ ณ     ณ
+ ณ     ร branch-type()
+ ณ     ณ  ภ %()
+ ณ     ณ
+ ณ     ภ count-branchings()  ...recursive call
+ ณ
+ ร count-branchings()
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ภ count-branchings()  ...recursive call
+ ณ
+ ร count-branchings()
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ภ count-branchings()  ...recursive call
+ ณ
+ ร branch-type()
+ ณ  ภ %()
+ ณ
+ ร count-branchings()
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ภ count-branchings()  ...recursive call
+ ณ
+ ร branch-type()
+ ณ  ภ %()
+ ณ
+ ร graft()
+ ณ  ร count-branchings()
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร branch-type()
+ ณ  ณ  ภ %()
+ ณ  ณ
+ ณ  ร count-branchings()
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ร count-branchings()
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ
+ ณ  ภ graft()  ...recursive call
+ ณ
+ ภ branch-type()
+    ภ %()
+
+dendrite()
+
+draw-box()
+
+edit()
+
+evolve()
+ ร save-run-info()
+ ร create-initial-population()
+ ณ  ร critter-filename()
+ ณ  ภ create-axon()
+ ณ     ภ create-dendrite()
+ ณ        ร create-weight()
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ร create-weight()  ...recursive call
+ ณ        ณ  ภ create-weight()  ...recursive call
+ ณ        ณ
+ ณ        ภ create-axon()  ...recursive call
+ ณ
+ ร compute-statistics()
+ ณ  ร fitness-list()
+ ณ  ณ  ร fitness()
+ ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร greatest()
+ ณ  ภ %()
+ ณ
+ ร report-statistics()
+ ณ  ร generation()
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร cross()
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร print-statistics()
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร edit()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร generation()
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร cross()
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร print-statistics()
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร generation()
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร cross()
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร critter-filename()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร edit()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร generation()
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร cross()
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร draw-box()
+ ณ  ร draw-box()
+ ณ  ร draw-box()
+ ณ  ร graph()
+ ณ  ร graph()
+ ณ  ร fitness-count()
+ ณ  ร graph()
+ ณ  ร generation()
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร cross()
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ  ณ     ณ
+ ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร graft()
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ branch-type()
+ ณ  ณ  ณ     ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ร stochastic-critter()
+ ณ  ณ  ณ  ภ critter-filename()
+ ณ  ณ  ณ
+ ณ  ณ  ร critter-filename()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร graph()
+ ณ  ภ generation()
+ ณ     ร critter-filename()
+ ณ     ร cross()
+ ณ     ณ  ร nth-branch()
+ ณ     ณ  ณ  ร count-branchings()
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร nth-branch()  ...recursive call
+ ณ     ณ  ณ  ภ count-branchings()
+ ณ     ณ  ณ     ร branch-type()
+ ณ     ณ  ณ     ณ  ภ %()
+ ณ     ณ  ณ     ณ
+ ณ     ณ  ณ     ร branch-type()
+ ณ     ณ  ณ     ณ  ภ %()
+ ณ     ณ  ณ     ณ
+ ณ     ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร count-branchings()
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร nth-branch()
+ ณ     ณ  ณ  ร count-branchings()
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร nth-branch()  ...recursive call
+ ณ     ณ  ณ  ภ count-branchings()
+ ณ     ณ  ณ     ร branch-type()
+ ณ     ณ  ณ     ณ  ภ %()
+ ณ     ณ  ณ     ณ
+ ณ     ณ  ณ     ร branch-type()
+ ณ     ณ  ณ     ณ  ภ %()
+ ณ     ณ  ณ     ณ
+ ณ     ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร count-branchings()
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร count-branchings()
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร branch-type()
+ ณ     ณ  ณ  ภ %()
+ ณ     ณ  ณ
+ ณ     ณ  ร count-branchings()
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ร branch-type()
+ ณ     ณ  ณ  ภ %()
+ ณ     ณ  ณ
+ ณ     ณ  ร graft()
+ ณ     ณ  ณ  ร count-branchings()
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร count-branchings()
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ร count-branchings()
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ร branch-type()
+ ณ     ณ  ณ  ณ  ณ  ภ %()
+ ณ     ณ  ณ  ณ  ณ
+ ณ     ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ     ณ  ณ  ณ
+ ณ     ณ  ณ  ภ graft()  ...recursive call
+ ณ     ณ  ณ
+ ณ     ณ  ภ branch-type()
+ ณ     ณ     ภ %()
+ ณ     ณ
+ ณ     ร stochastic-critter()
+ ณ     ณ  ภ critter-filename()
+ ณ     ณ
+ ณ     ร stochastic-critter()
+ ณ     ณ  ภ critter-filename()
+ ณ     ณ
+ ณ     ร critter-filename()
+ ณ     ร stochastic-critter()
+ ณ     ณ  ภ critter-filename()
+ ณ     ณ
+ ณ     ร critter-filename()
+ ณ     ภ critter-filename()
+ ณ
+ ร generation()
+ ณ  ร critter-filename()
+ ณ  ร cross()
+ ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร nth-branch()
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร nth-branch()  ...recursive call
+ ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ
+ ณ  ณ  ร graft()
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ร count-branchings()
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ร branch-type()
+ ณ  ณ  ณ  ณ  ณ  ภ %()
+ ณ  ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ  ณ
+ ณ  ณ  ณ  ภ graft()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ภ branch-type()
+ ณ  ณ     ภ %()
+ ณ  ณ
+ ณ  ร stochastic-critter()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร stochastic-critter()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร critter-filename()
+ ณ  ร stochastic-critter()
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร critter-filename()
+ ณ  ภ critter-filename()
+ ณ
+ ร compute-statistics()
+ ณ  ร fitness-list()
+ ณ  ณ  ร fitness()
+ ณ  ณ  ณ  ภ count-branchings()
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ร branch-type()
+ ณ  ณ  ณ     ณ  ภ %()
+ ณ  ณ  ณ     ณ
+ ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+ ณ  ณ  ณ
+ ณ  ณ  ภ critter-filename()
+ ณ  ณ
+ ณ  ร greatest()
+ ณ  ภ %()
+ ณ
+ ภ report-statistics()
+    ร generation()
+    ณ  ร critter-filename()
+    ณ  ร cross()
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร graft()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ภ branch-type()
+    ณ  ณ     ภ %()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ภ critter-filename()
+    ณ
+    ร print-statistics()
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร edit()
+    ณ  ภ critter-filename()
+    ณ
+    ร generation()
+    ณ  ร critter-filename()
+    ณ  ร cross()
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร graft()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ภ branch-type()
+    ณ  ณ     ภ %()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ภ critter-filename()
+    ณ
+    ร print-statistics()
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร generation()
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร cross()
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ  ณ     ณ
+    ณ  ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร graft()
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ branch-type()
+    ณ  ณ  ณ     ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ร stochastic-critter()
+    ณ  ณ  ณ  ภ critter-filename()
+    ณ  ณ  ณ
+    ณ  ณ  ร critter-filename()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร edit()
+    ณ  ภ critter-filename()
+    ณ
+    ร generation()
+    ณ  ร critter-filename()
+    ณ  ร cross()
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร graft()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ภ branch-type()
+    ณ  ณ     ภ %()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ภ critter-filename()
+    ณ
+    ร draw-box()
+    ร draw-box()
+    ร draw-box()
+    ร graph()
+    ร graph()
+    ร fitness-count()
+    ร graph()
+    ร generation()
+    ณ  ร critter-filename()
+    ณ  ร cross()
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร nth-branch()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร nth-branch()  ...recursive call
+    ณ  ณ  ณ  ภ count-branchings()
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ร branch-type()
+    ณ  ณ  ณ     ณ  ภ %()
+    ณ  ณ  ณ     ณ
+    ณ  ณ  ณ     ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ
+    ณ  ณ  ร graft()
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ร count-branchings()
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ร branch-type()
+    ณ  ณ  ณ  ณ  ณ  ภ %()
+    ณ  ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+    ณ  ณ  ณ  ณ
+    ณ  ณ  ณ  ภ graft()  ...recursive call
+    ณ  ณ  ณ
+    ณ  ณ  ภ branch-type()
+    ณ  ณ     ภ %()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ร stochastic-critter()
+    ณ  ณ  ภ critter-filename()
+    ณ  ณ
+    ณ  ร critter-filename()
+    ณ  ภ critter-filename()
+    ณ
+    ร graph()
+    ภ generation()
+       ร critter-filename()
+       ร cross()
+       ณ  ร nth-branch()
+       ณ  ณ  ร count-branchings()
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ  ณ
+       ณ  ณ  ร nth-branch()  ...recursive call
+       ณ  ณ  ภ count-branchings()
+       ณ  ณ     ร branch-type()
+       ณ  ณ     ณ  ภ %()
+       ณ  ณ     ณ
+       ณ  ณ     ร branch-type()
+       ณ  ณ     ณ  ภ %()
+       ณ  ณ     ณ
+       ณ  ณ     ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร count-branchings()
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร nth-branch()
+       ณ  ณ  ร count-branchings()
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ  ณ
+       ณ  ณ  ร nth-branch()  ...recursive call
+       ณ  ณ  ภ count-branchings()
+       ณ  ณ     ร branch-type()
+       ณ  ณ     ณ  ภ %()
+       ณ  ณ     ณ
+       ณ  ณ     ร branch-type()
+       ณ  ณ     ณ  ภ %()
+       ณ  ณ     ณ
+       ณ  ณ     ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร count-branchings()
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร count-branchings()
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร branch-type()
+       ณ  ณ  ภ %()
+       ณ  ณ
+       ณ  ร count-branchings()
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ
+       ณ  ร branch-type()
+       ณ  ณ  ภ %()
+       ณ  ณ
+       ณ  ร graft()
+       ณ  ณ  ร count-branchings()
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ
+       ณ  ณ  ร count-branchings()
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ  ณ
+       ณ  ณ  ร count-branchings()
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ร branch-type()
+       ณ  ณ  ณ  ณ  ภ %()
+       ณ  ณ  ณ  ณ
+       ณ  ณ  ณ  ภ count-branchings()  ...recursive call
+       ณ  ณ  ณ
+       ณ  ณ  ภ graft()  ...recursive call
+       ณ  ณ
+       ณ  ภ branch-type()
+       ณ     ภ %()
+       ณ
+       ร stochastic-critter()
+       ณ  ภ critter-filename()
+       ณ
+       ร stochastic-critter()
+       ณ  ภ critter-filename()
+       ณ
+       ร critter-filename()
+       ร stochastic-critter()
+       ณ  ภ critter-filename()
+       ณ
+       ร critter-filename()
+       ภ critter-filename()
+
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ               TOTAL NUMBER OF FUNCTIONS REFERENCED :   27 (2954)             บ
+บ               NUMBER OF FUNCTION DEFINITIONS       :   27                    บ
+บ               DIRECTED CALL GRAPH WITH 27 NODES AND 41 CONNECTIONS           บ
+บ               MAXIMUM CALL PATH DEPTH              :    8                    บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                               FILE INFORMATION                               บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+FILE             SIZE         LINES
+CEREBRUM.LSP:   19468 bytes,    535 lines,   25 functions <E:/LISP/XLISP20/CEREBRUM/>
+UTILS.LSP   :    2841 bytes,    118 lines,    2 functions <E:/LISP/XLISP20/CEREBRUM/>
+
+TOTAL       :   22309 bytes,    653 lines,   27 functions in 2 of 2 files
+
+source files: 2, 22309 bytes, 653 lines
+

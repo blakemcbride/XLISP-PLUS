@@ -1,0 +1,95 @@
+To differentiate this version from the original David Betz version,
+this one is called XLISP-PLUS 3.05. It is based on David Betz's Xlisp
+2.1.
+
+The following archives are available via the XLISP-PLUS
+Web Page: http://almy.us/xlisp.html):
+
+Archive XL305SRC:
+Contains all source files. Consult the README.SRC file in that archive
+for additional information.
+
+Archive XL305DOC:
+Contains Microsoft Word DOCX and Adobe Acrobat PDF format versions of
+the documentation. Also contains text files of the Lisp Tutorial,
+Internal operation, and the older XLISP-PLUS document.
+
+Archive XL305REQ:
+Contains all the LISP source files REQuired for operation (see README.LSP). 
+
+Archive XL305OSX:
+Contains the executable for Mac OS X, 64-bit Intel binary. Also
+contains Qt4 graphics version which requires that the Qt4 runtime
+library be installed. These are currently available at
+http://qt.nokia.com/downloads.
+
+Archive XL305LINUX:
+Contains the executable for 32 bit Linux, compiled under Ubuntu 10.04.
+Also contains Qt4 graphics version which requires that the Qt4 runtime
+library be installed.
+
+Archive XL305WIN:
+WIN32S 32 bit executable for Windows 3.1, OS/2 WARP, Windows/95, and
+Windows/NT through Windows 7. See file readme.win for details.
+Also contains executable for Microsoft Windows 3.1, using an 80386 or
+better.  
+
+
+The following archives are of an older version
+
+Archive XL304EXE: 
+Executable program which runs on any generic IBM/PC or Clone.
+Compiled using Borland C++ 4.0 (as a C compiler), Ralf Brown's spawno
+version 3.0 for nice SYSTEM function, and Fabrice Bellard's lzexe to
+compact the executable. It's tight for memory, so any of the versions
+that follow are preferable instead.
+
+Archive XL304386:
+Executable program which requires 80386 or 80486, and at least 1
+megabyte of extended memory. Uses DJ Delorie's port of the GNU C
+compiler, and his DOS extender, GO32. Compatible with DPMI, VCPI,
+and XMS.
+
+This archive also contains EMU387, the emulator for above. To use,
+set environment variable "set go32=emu c:/bin/emu387" assuming this
+file is in c:\bin directory. YOU MUST USE THIS EMULATOR FOR XLISP.EXE
+ON SYSTEMS WITHOUT THE FLOATING POINT COPROCESSOR (486SX, 386 without
+387, and a number of non-Intel 486 variations).
+
+Archive XL304OS2: 
+Executable program for OS/2 V2.x or later. Uses GCC and EMX.
+
+
+**********************
+
+Notes: 
+
+MS DOS: I am no longer building these versions.
+
+Microsoft Windows NT/95 Console: I haven't tried building this but
+might some day.
+
+OS/2 Presentation Manager: Not likely.
+
+AMIGA: Compile from source (but I can't test it).
+
+IBM Mainframe (370): Compile from source (but I can't test it).
+
+UNIX: Should work, but I don't have the finishing touches in it like
+I've done for Linux. I'd suggest using the Linux or OS X version as a
+starting point rather than the existing Unix version.
+
+Others computers: I've tried to make the code as portable as
+possible. You'll need to write a *STUFF.C file for your system. Also
+read XLISP.H closely. All the 80x86'isms are conditionally included,
+so these won't get in the way.
+
+C++: It won't compile, but you should be able to hack on the code a while
+and get it to go. The ANSI C conversion work I've done should help you,
+although I've only converted function headers as necessary to keep the
+C compilers happy.
+
+Tom Almy
+
+tom@almy.us
+

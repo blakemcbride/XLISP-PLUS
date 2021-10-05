@@ -1,0 +1,48 @@
+# This file is for version 1.12 or later of DJGCC
+# The order to search for rules and files is specified by .SUFFIXES
+.SUFFIXES : .o .c .s
+
+
+# DEFAULT RULES
+# To produce a `.o' file from a `.s' file using gcc.
+.s.o:; gcc -c $(AFLAGS) $*.s
+
+# To produce a `.o' file from a `.c' file using gcc. 
+.c.o:; gcc -c $(CFLAGS) $*.c
+
+OFILES=xlisp.o xlbfun.o xlcont.o xldbug.o xldmem.o xleval.o \
+xlfio.o xlglob.o xlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o xlseq.o dosstuff.o gccasm.o xlstruct.o xlmath2.o \
+xlmath3.o xlbignum.o
+
+# CFLAGS= -O -fomit-frame-pointer -DGCC -DVMEM=1000000 -DSTSZ=256000
+CFLAGS= -Wall -O -DGCC -DVMEM=1000000 -DSTSZ=200000
+AFLAGS= 
+
+xlispg.exe:	$(OFILES) xlftab.o xlispg.lnk
+	gcc @xlispg.lnk
+	nm xlispg >xlispg.map
+	strip xlispg
+	coff2exe -s go32.exe xlispg
+
+xlispg.lnk:	makegcc
+	>xlispg.lnk $(OFILES) xlftab.o -lm -o xlispg
+
+xlisp.h:	xldmem.h xlftab.h
+	touch xlisp.h
+
+# A bug with the inline trig functions force the following kludge
+
+xlmath3.o:	xlisp.h xlmath3.c
+	gcc -c $(CFLAGS) -fno-builtin xlmath3.c
+
+xlmath2.o:	xlisp.h xlmath2.c
+	gcc -c $(CFLAGS) -fno-builtin xlmath2.c
+
+xlmath.o:	xlisp.h xlmath.c
+	gcc -c $(CFLAGS) -fno-builtin xlmath.c
+
+xlftab.o:	xlisp.h osdefs.h osptrs.h
+$(OFILES):	xlisp.h
+

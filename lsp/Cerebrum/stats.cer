@@ -1,0 +1,322 @@
+CEREBRUM
+
+by Peter Dudey
+
+Maximum Initial Depth: 15
+Population Size: 200
+Number Produced by Breeding: 70
+Number of Generations: 50
+Raw Fitness Weight: 20
+Parsimony Weight: 0.2
+Maximum Conceivable Fitness: 40
+Critters Stored In: critters
+
+
+Generation Number 0:
+Best Individual: Number 46
+Best Fitness: 40 (of 40)
+Average Fitness: 2.065
+
+
+Generation Number 1:
+Best Individual: Number 6
+Best Fitness: 40 (of 40)
+Average Fitness: 28.245
+
+
+Generation Number 2:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 31.525
+
+
+Generation Number 3:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 34.055
+
+
+Generation Number 4:
+Best Individual: Number 5
+Best Fitness: 40 (of 40)
+Average Fitness: 35.34
+
+
+Generation Number 5:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 36.41
+
+
+Generation Number 6:
+Best Individual: Number 2
+Best Fitness: 40 (of 40)
+Average Fitness: 35.385
+
+
+Generation Number 7:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.01
+
+
+Generation Number 8:
+Best Individual: Number 2
+Best Fitness: 40 (of 40)
+Average Fitness: 37.735
+
+
+Generation Number 9:
+Best Individual: Number 3
+Best Fitness: 40 (of 40)
+Average Fitness: 37.545
+
+
+Generation Number 10:
+Best Individual: Number 6
+Best Fitness: 40 (of 40)
+Average Fitness: 37.875
+
+
+Generation Number 11:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.255
+
+
+Generation Number 12:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.605
+
+
+Generation Number 13:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.39
+
+
+Generation Number 14:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.415
+
+
+Generation Number 15:
+Best Individual: Number 2
+Best Fitness: 40 (of 40)
+Average Fitness: 37.765
+
+
+Generation Number 16:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 38.04
+
+
+Generation Number 17:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 37.925
+
+
+Generation Number 18:
+Best Individual: Number 4
+Best Fitness: 40 (of 40)
+Average Fitness: 38.41
+
+
+Generation Number 19:
+Best Individual: Number 2
+Best Fitness: 40 (of 40)
+Average Fitness: 37.915
+
+
+Generation Number 20:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 37.94
+
+
+Generation Number 21:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 38.33
+
+
+Generation Number 22:
+Best Individual: Number 7
+Best Fitness: 40 (of 40)
+Average Fitness: 37.665
+
+
+Generation Number 23:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 38.875
+
+
+Generation Number 24:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 38.74
+
+
+Generation Number 25:
+Best Individual: Number 2
+Best Fitness: 40 (of 40)
+Average Fitness: 38.68
+
+
+Generation Number 26:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 38.98
+
+
+Generation Number 27:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 38.55
+
+
+Generation Number 28:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 38.855
+
+
+Generation Number 29:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.24
+
+
+Generation Number 30:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 39.12
+
+
+Generation Number 31:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.395
+
+
+Generation Number 32:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 39.335
+
+
+Generation Number 33:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.645
+
+
+Generation Number 34:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.71
+
+
+Generation Number 35:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.735
+
+
+Generation Number 36:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.82
+
+
+Generation Number 37:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.82
+
+
+Generation Number 38:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.83
+
+
+Generation Number 39:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.815
+
+
+Generation Number 40:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 39.8
+
+
+Generation Number 41:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.7
+
+
+Generation Number 42:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.67
+
+
+Generation Number 43:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.63
+
+
+Generation Number 44:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.715
+
+
+Generation Number 45:
+Best Individual: Number 1
+Best Fitness: 40 (of 40)
+Average Fitness: 39.83
+
+
+Generation Number 46:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.83
+
+
+Generation Number 47:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.86
+
+
+Generation Number 48:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.88
+
+
+Generation Number 49:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.935
+
+
+Generation Number 50:
+Best Individual: Number 0
+Best Fitness: 40 (of 40)
+Average Fitness: 39.93
+
+Here's the best individual: 
+
+(axon (dendrite 2.91552 a))

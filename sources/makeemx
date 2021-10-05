@@ -1,0 +1,98 @@
+OFILES=xlisp.o xlbfun.o xlcont.o xldbug.o xldmem.o xleval.o \
+xlfio.o xlglob.o xlimage.o xlinit.o xlio.o xljump.o xllist.o \
+xlmath.o xlobj.o xlpp.o xlprin.o xlread.o xlstr.o xlsubr.o \
+xlsym.o xlsys.o xlseq.o xlstruct.o xlmath2.o xlbignum.o xlmath3.o \
+xlftab.o emxstuff.o
+
+CFLAGS= -DEMX -O -DVMEM=1000000 -DSTSZ=250000
+
+xlispos2.exe:	$(OFILES) xlftab.o 
+	gcc -o xlispos2.exe $(OFILES)
+	lxlite xlispos2.exe
+
+xlisp.o:	xlisp.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlisp.c
+
+xlbfun.o:	xlbfun.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlbfun.c
+
+xlcont.o:	xlcont.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlcont.c
+
+xldbug.o:	xldbug.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xldbug.c
+
+xldmem.o:	xldmem.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xldmem.c
+
+xleval.o:	xleval.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xleval.c
+
+xlfio.o:	xlfio.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlfio.c
+
+xlglob.o:	xlglob.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlglob.c
+
+xlimage.o:	xlimage.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlimage.c
+
+xlinit.o:	xlinit.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlinit.c
+
+xlio.o:	xlio.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlio.c
+
+xljump.o:	xljump.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xljump.c
+
+xllist.o:	xllist.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xllist.c
+
+xlmath.o:	xlmath.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) -fno-builtin xlmath.c
+
+xlobj.o:	xlobj.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlobj.c
+
+xlpp.o:	xlpp.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlpp.c
+
+xlprin.o:	xlprin.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlprin.c
+
+xlread.o:	xlread.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlread.c
+
+xlstr.o:	xlstr.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlstr.c
+
+xlsubr.o:	xlsubr.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlsubr.c
+
+xlsym.o:	xlsym.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlsym.c
+
+xlsys.o:	xlsys.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlsys.c
+
+xlseq.o:	xlseq.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlseq.c
+
+emxstuff.o:	emxstuff.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) emxstuff.c
+
+xlstruct.o:	xlstruct.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlstruct.c
+
+xlmath2.o:	xlmath2.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) -fno-builtin xlmath2.c
+
+xlmath3.o:	xlmath2.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) -fno-builtin xlmath3.c
+
+xlbignum.o:	xlbignum.c xlisp.h xldmem.h xlftab.h
+	gcc -c $(CFLAGS) xlbignum.c
+
+xlftab.o:	xlftab.c xlisp.h xldmem.h xlftab.h osdefs.h osptrs.h
+	gcc -c $(CFLAGS) xlftab.c

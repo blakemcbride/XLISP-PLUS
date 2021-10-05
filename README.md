@@ -35,6 +35,6 @@ Common Lisp to Scheme he also called it version 3.x.  Thus they're
 both version 3.x.  The best way to differentiate them is that Almy
 also renamed the package XLISP-PLUS.
 
-The home for this GitHub release is []()
+The home for this GitHub release is [https://github.com/blakemcbride/XLISP-PLUS](https://github.com/blakemcbride/XLISP-PLUS)
 
 Blake McBride

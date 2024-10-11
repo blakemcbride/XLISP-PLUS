@@ -1,0 +1,75 @@
+
+Note, when compiling, you may get a number of "uninitialized"
+warnings.  These are not uninitialized.  The compiler can't see that
+the function is being exited before that point.
+
+To build:
+
+Linux:
+
+	cd sources
+	make -f makelinux
+	
+Mac:
+	cd source
+	make -f makeosx
+	
+
+Windows:  (latest port unfinished and unworking)
+
+	cd sources
+	make -f makewin
+	
+----------------------------------------------
+
+Notes
+
+Exiting XLISP:  (exit)
+
+
+File extensions
+
+	.lsp	lisp source code
+
+	.wks	saved binary workspace (image)
+
+
+OS Environment Variable:
+
+	XLPATH	when loading a .lsp or .wks file the system searches
+		this path first, and then the local directory
+
+
+Startup
+
+First, try to load "xlisp.wks", if no other is specified, or another
+if specified.
+
+If no wks file is loaded, then load "init.lsp"
+
+
+The init.lsp file that comes with XLISP is important because it loads
+all of the lisp code that makes the system full-featured.
+
+
+(save "myimage")	create image of workspace in file "myimage.wks"
+
+(restore "myimage")	restore image "myimage.wks"
+
+
+Starting xlisp with an initial image file (and do not load init.lsp)
+
+	xlisp -wIMAGEFILE
+
+e.g.
+
+	xlisp -wmyimage
+
+
+In all cases, file name extensions ".lsp" and ".wks" are assumed.
+
+
+Arrays are limited to 1 dimension
+
+
+File makewks.lsp can be used to create an initial image

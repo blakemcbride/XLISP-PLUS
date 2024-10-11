@@ -1,4 +1,4 @@
-# This is for OSX, although the XCODE project file is also supplied
+# This is for Linux (tested on 64 bits)
 # Tom Almy 12/2010
 
 CC=gcc

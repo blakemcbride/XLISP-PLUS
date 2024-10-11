@@ -959,7 +959,7 @@ LVAL xintlen() /* integer length */
     u = getbignumarray(ux);
     size = getbignumsize(ux);
     if (*u++) { /* negative -- we must work more */
-        long sum;
+        long sum = 0;
         int borrow = 1;
 
         if (*u == 0) { u++; size--;}
@@ -1055,7 +1055,7 @@ LVAL xlogbitp() /* bit position */
     bitpos =(int) (pos % 16);
 
     if (*u++) { /* negative -- in for more work! */
-        unsigned long sum;
+        unsigned long sum = 0;
         int carry = 1, i;
         if (numpos < 0) return s_true;
         for (i = getbignumsize(ux)-1; i >= numpos; i--) {
